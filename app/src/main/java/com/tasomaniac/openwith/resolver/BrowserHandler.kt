@@ -45,6 +45,7 @@ class BrowserHandler(
                     browserPreferences.mode = Mode.AlwaysAsk
                 }
             }
+            else -> {}
         }
     }
 

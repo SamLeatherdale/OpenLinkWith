@@ -16,9 +16,9 @@ buildscript {
             versionCode: versionMajor * 10000 + versionMinor * 100 + versionBuild,
             versionName: "${versionMajor}.${versionMinor}",
 
-            dagger     : '2.40.5',
+            dagger     : '2.42',
             lifecycle  : '2.4.0',
-            kotlin     : '1.4.32',
+            kotlin     : '1.7.21',
             ktlint     : '0.39.0',
             okHttp     : '4.8.0',
             room       : '2.4.0',
