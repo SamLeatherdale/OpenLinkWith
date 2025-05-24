@@ -15,6 +15,7 @@ if (name in modules_with_viewbinding) {
 }
 
 android {
+    namespace 'com.tasomaniac.openwith'
     compileSdkVersion versions.compileSdk
 
     buildFeatures {
