@@ -1,7 +1,5 @@
 package com.tasomaniac.openwith.homescreen
 
-import android.annotation.TargetApi
-import android.os.Build.VERSION_CODES.M
 import com.tasomaniac.openwith.PerActivity
 import okhttp3.Call
 import okhttp3.Callback
@@ -16,7 +14,6 @@ import java.io.IOException
 import java.util.regex.Pattern
 import javax.inject.Inject
 
-@TargetApi(M)
 @PerActivity
 class TitleFetcher @Inject constructor(private val client: OkHttpClient) {
 

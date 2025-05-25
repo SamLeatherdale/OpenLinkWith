@@ -14,6 +14,7 @@ import com.tasomaniac.openwith.extensions.restart
 import com.tasomaniac.openwith.rx.SchedulingStrategy
 import com.tasomaniac.openwith.settings.Settings
 import com.tasomaniac.openwith.settings.SettingsFragment
+import com.tasomaniac.openwith.translations.R.string
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
@@ -64,8 +65,8 @@ class UsageAccessSettings @Inject constructor(
             setOnPreferenceClickListener { onUsageAccessClick(it) }
 
             // Set title and summary in red font.
-            title = coloredErrorString(R.string.pref_title_usage_stats)
-            summary = coloredErrorString(R.string.pref_summary_usage_stats)
+            title = coloredErrorString(string.pref_title_usage_stats)
+            summary = coloredErrorString(string.pref_summary_usage_stats)
             widgetLayoutResource = R.layout.preference_widget_error
         }
     }
@@ -77,7 +78,7 @@ class UsageAccessSettings @Inject constructor(
             observeUsageStats()
         } else {
             displayAlert()
-            preference.setSummary(R.string.error_usage_access_not_found)
+            preference.setSummary(string.error_usage_access_not_found)
         }
 
         analytics.sendEvent("Preference", "Item Click", preference.key)
@@ -93,8 +94,8 @@ class UsageAccessSettings @Inject constructor(
 
     private fun displayAlert() {
         AlertDialog.Builder(context)
-            .setTitle(R.string.error)
-            .setMessage(R.string.error_usage_access_not_found)
+            .setTitle(string.error)
+            .setMessage(string.error_usage_access_not_found)
             .setPositiveButton(android.R.string.ok, null)
             .show()
     }

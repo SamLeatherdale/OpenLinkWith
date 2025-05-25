@@ -1,32 +1,46 @@
-apply plugin: 'com.android.application'
+plugins {
+  id 'com.android.application'
+}
 apply from: configFile('android-common-config.gradle')
-apply plugin: 'com.novoda.build-properties'
 
-buildProperties {
-  signing.using(configFile('release.signing')) | configFile('debug.signing')
+static def loadPropertiesFile(File file) {
+  def props = new Properties()
+  if (file.exists()) {
+    file.withInputStream { stream -> props.load(stream) }
+  } else {
+    throw new GradleException("Required properties file not found: ${file.absolutePath}")
+  }
+  return props
 }
 
-def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
+def gradlePrefix = "gradle/"
+def debugSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "debug.signing"))
+def releaseSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "release.signing"))
 
 android {
+  namespace 'com.tasomaniac.openwith'
+
   defaultConfig {
     applicationId 'com.tasomaniac.openwith'
     versionCode versions.versionCode
     versionName versions.versionName
-    buildConfigString 'GIT_SHA', gitSha
 
     resConfigs 'ar', 'de', 'en', 'es', 'fi', 'fr', 'hi', 'hr', 'in', 'it', 'iw', 'ja', 'ko', 'nl', 'pl', 'pt-rBR', 'pt-rPT', 'ru', 'sv', 'tr', 'uk', 'vi', 'zh-rCN', 'zh-rTW'
   }
 
   signingConfigs {
-    debug.storeFile configFile('debug.keystore')
-    release {
-      def signing = buildProperties.signing
-      storeFile configFile(signing['storeFile'].string)
-      storePassword signing['storePassword'].string
-      keyAlias signing['keyAlias'].string
-      keyPassword signing['keyPassword'].string
-    }
+      debug {
+        storeFile rootProject.file(gradlePrefix + debugSigning['storeFile'])
+        storePassword debugSigning['storePassword']
+        keyAlias debugSigning['keyAlias']
+        keyPassword debugSigning['keyPassword']
+      }
+      release {
+        storeFile rootProject.file(gradlePrefix + releaseSigning['storeFile'])
+        storePassword releaseSigning['storePassword']
+        keyAlias releaseSigning['keyAlias']
+        keyPassword releaseSigning['keyPassword']
+      }
   }
 
   buildTypes {
@@ -51,13 +65,11 @@ android {
       applicationIdSuffix '.floss'
       versionNameSuffix '-floss'
     }
-    play {}
+    play {
+      apply plugin: 'com.google.gms.google-services'
+      apply plugin: 'com.google.firebase.crashlytics'
+    }
   }
-}
-
-if (isPlay) {
-  apply from: configFile('configure-crashlytics.gradle')
-  apply from: configFile('play-publish.gradle')
 }
 
 configurations {
@@ -80,6 +92,11 @@ dependencies {
   implementation 'androidx.sharetarget:sharetarget:1.2.0-rc01'
 
   implementation "com.squareup.okhttp3:okhttp:$versions.okHttp"
+
+  playImplementation platform('com.google.firebase:firebase-bom:33.14.0')
+
+  playImplementation 'com.google.firebase:firebase-analytics'
+  playImplementation 'com.google.firebase:firebase-crashlytics'
 
   testImplementation project(':test-support')
 }

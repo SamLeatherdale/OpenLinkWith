@@ -1,4 +1,4 @@
-package com.tasomaniac.openwith.intro;
+package com.tasomaniac.openwith.intro.lib;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -7,12 +7,13 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import androidx.core.content.ContextCompat;
-import com.tasomaniac.openwith.intro.lib.R;
 
-import javax.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class CircularIndicatorView extends LinearLayout {
     private static final int FIRST_PAGE_NUM = 0;

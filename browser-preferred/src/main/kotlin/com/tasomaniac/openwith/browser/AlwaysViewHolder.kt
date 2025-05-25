@@ -3,9 +3,9 @@ package com.tasomaniac.openwith.browser
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tasomaniac.openwith.browser.preferred.R
-import com.tasomaniac.openwith.browser.preferred.databinding.BrowserListItemBinding
+import com.tasomaniac.openwith.browser.databinding.BrowserListItemBinding
 import com.tasomaniac.openwith.extensions.inflater
+import com.tasomaniac.openwith.translations.R
 
 class AlwaysViewHolder private constructor(
     private val binding: BrowserListItemBinding

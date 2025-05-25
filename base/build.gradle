@@ -1,3 +1,12 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.tasomaniac.openwith.base'
+}
+
 apply from: configFile('android-library-config.gradle')
 
 dependencies {

@@ -9,6 +9,7 @@ import com.tasomaniac.openwith.R
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.settings.Settings
 import com.tasomaniac.openwith.settings.SettingsFragment
+import com.tasomaniac.openwith.translations.R.string
 import javax.inject.Inject
 
 class AskForRatingSettings @Inject constructor(
@@ -48,9 +49,9 @@ class AskForRatingSettings @Inject constructor(
 
     private fun displayPositiveRatingDialog() {
         AlertDialog.Builder(context)
-            .setTitle(R.string.pref_title_category_ask_for_rating)
-            .setMessage(R.string.ask_for_rating_rating_message)
-            .setPositiveButton(R.string.ask_for_rating_rating_positive_button) { _, _ ->
+            .setTitle(string.pref_title_category_ask_for_rating)
+            .setMessage(string.ask_for_rating_rating_message)
+            .setPositiveButton(string.ask_for_rating_rating_positive_button) { _, _ ->
                 analytics.sendEvent("AskForRating", "Dialog", "Play Store")
             }
             .setOnDismissListener {
@@ -63,9 +64,9 @@ class AskForRatingSettings @Inject constructor(
 
     private fun displayNegativeRatingDialog() {
         AlertDialog.Builder(context)
-            .setTitle(R.string.ask_for_rating_feedback)
-            .setMessage(R.string.ask_for_rating_feedback_message)
-            .setNegativeButton(R.string.cancel, null)
+            .setTitle(string.ask_for_rating_feedback)
+            .setMessage(string.ask_for_rating_feedback_message)
+            .setNegativeButton(string.cancel, null)
             .setNeutralButton("Never") { _, _ ->
                 condition.alreadyShown = true
                 analytics.sendEvent("AskForRating", "Dialog", "Never")
@@ -84,7 +85,7 @@ class AskForRatingSettings @Inject constructor(
     private fun startContactEmailChooser() {
         ShareCompat.IntentBuilder(activity)
             .addEmailTo("Said Tahsin Dane <tasomaniac+openlinkwith@gmail.com>")
-            .setSubject(context.getString(R.string.ask_for_rating_feedback_email_subject))
+            .setSubject(context.getString(string.ask_for_rating_feedback_email_subject))
             .setType("message/rfc822")
             .startChooser()
     }

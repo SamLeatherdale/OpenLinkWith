@@ -8,6 +8,7 @@ import com.tasomaniac.openwith.browser.BrowserPreferences
 import com.tasomaniac.openwith.browser.PreferredBrowserActivity
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.preferred.PreferredAppsActivity
+import com.tasomaniac.openwith.translations.R.string
 import javax.inject.Inject
 
 class GeneralSettings @Inject constructor(
@@ -41,17 +42,17 @@ class GeneralSettings @Inject constructor(
         sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
-        if (key.startsWith("pref_browser")) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (key != null && key.startsWith("pref_browser")) {
             val browser = findPreference(R.string.pref_key_browser)
             browser.summary = browserPreferences.mode.toBrowserSummary()
         }
     }
 
     private fun BrowserPreferences.Mode.toBrowserSummary() = when (this) {
-        BrowserPreferences.Mode.None -> context.getString(R.string.browser_none_description)
-        BrowserPreferences.Mode.AlwaysAsk -> context.getString(R.string.browser_always_ask_description)
-        is BrowserPreferences.Mode.Browser -> context.getString(R.string.pref_summary_selected_browser, displayLabel)
+        BrowserPreferences.Mode.None -> context.getString(string.browser_none_description)
+        BrowserPreferences.Mode.AlwaysAsk -> context.getString(string.browser_always_ask_description)
+        is BrowserPreferences.Mode.Browser -> context.getString(string.pref_summary_selected_browser, displayLabel)
     }
 
     private inline fun <reified T : Activity> startActivity() {

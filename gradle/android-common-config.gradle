@@ -1,16 +1,20 @@
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
-final modules_with_viewbinding = ['browser-preferred']
+final modules_with_viewbinding = ['app', 'browser-preferred', 'resolver']
+final modules_with_build_config = ['app', 'resolver']
 if (name in modules_with_viewbinding) {
     android {
-        buildFeatures.viewBinding = true
+        buildFeatures {
+            viewBinding true
+        }
     }
-} else {
-    apply plugin: 'kotlin-android-extensions'
-
-    androidExtensions {
-        experimental true
+}
+if (name in modules_with_build_config) {
+    android {
+        buildFeatures {
+            buildConfig true
+        }
     }
 }
 
@@ -28,8 +32,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     sourceSets {
@@ -38,7 +42,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = JavaVersion.VERSION_11
     }
 }
 

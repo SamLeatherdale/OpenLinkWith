@@ -8,7 +8,7 @@ import android.os.Build.VERSION_CODES.N
 import android.provider.Settings
 import androidx.appcompat.app.AlertDialog
 import androidx.core.text.parseAsHtml
-import com.tasomaniac.openwith.R
+import com.tasomaniac.openwith.translations.R
 import timber.log.Timber
 import javax.inject.Inject
 

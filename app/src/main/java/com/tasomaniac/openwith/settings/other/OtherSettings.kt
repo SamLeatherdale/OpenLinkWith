@@ -4,6 +4,7 @@ import androidx.core.app.ShareCompat
 import androidx.preference.Preference
 import com.tasomaniac.openwith.BuildConfig
 import com.tasomaniac.openwith.R
+import com.tasomaniac.openwith.base.R.string
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.settings.Settings
 import com.tasomaniac.openwith.settings.SettingsFragment
@@ -52,7 +53,7 @@ class OtherSettings @Inject constructor(
     private fun startContactEmailChooser() {
         ShareCompat.IntentBuilder(activity)
             .addEmailTo("Said Tahsin Dane <tasomaniac+openlinkwith@gmail.com>")
-            .setSubject(context.getString(R.string.app_name))
+            .setSubject(context.getString(string.app_name))
             .setType("message/rfc822")
             .startChooser()
     }

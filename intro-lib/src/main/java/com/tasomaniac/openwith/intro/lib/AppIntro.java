@@ -1,4 +1,4 @@
-package com.tasomaniac.openwith.intro;
+package com.tasomaniac.openwith.intro.lib;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -13,11 +13,11 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
-import com.tasomaniac.openwith.intro.lib.R;
-import dagger.android.support.DaggerAppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import dagger.android.support.DaggerAppCompatActivity;
 
 public abstract class AppIntro extends DaggerAppCompatActivity {
 
@@ -127,7 +127,7 @@ public abstract class AppIntro extends DaggerAppCompatActivity {
         }
     }
 
-    void setDoneText(@Nullable final String text) {
+    public void setDoneText(@Nullable final String text) {
         TextView doneText = findViewById(R.id.done);
         doneText.setText(text);
     }

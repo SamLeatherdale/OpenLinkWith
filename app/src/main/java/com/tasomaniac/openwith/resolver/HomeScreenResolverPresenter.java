@@ -2,10 +2,12 @@ package com.tasomaniac.openwith.resolver;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import com.tasomaniac.openwith.R;
-import timber.log.Timber;
+
+import com.tasomaniac.openwith.translations.R;
 
 import javax.inject.Inject;
+
+import timber.log.Timber;
 
 class HomeScreenResolverPresenter implements ResolverPresenter {
 

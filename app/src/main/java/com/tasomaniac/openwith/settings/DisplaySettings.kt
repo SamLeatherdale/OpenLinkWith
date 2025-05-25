@@ -25,8 +25,8 @@ class DisplaySettings @Inject constructor(
         sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
-        if (key.isKeyEquals(R.string.pref_key_night_mode)) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (key != null && key.isKeyEquals(R.string.pref_key_night_mode)) {
             nightModePreferences.updateDefaultNightMode()
             activity.recreate()
 
