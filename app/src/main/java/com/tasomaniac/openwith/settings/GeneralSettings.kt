@@ -42,8 +42,8 @@ class GeneralSettings @Inject constructor(
         sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
-        if (key.startsWith("pref_browser")) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (key != null && key.startsWith("pref_browser")) {
             val browser = findPreference(R.string.pref_key_browser)
             browser.summary = browserPreferences.mode.toBrowserSummary()
         }

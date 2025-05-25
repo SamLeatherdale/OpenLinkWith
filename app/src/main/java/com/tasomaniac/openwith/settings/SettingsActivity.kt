@@ -74,7 +74,7 @@ class SettingsActivity :
         return true
     }
 
-    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, s: String) {
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         BackupManager(this).dataChanged()
     }
 }

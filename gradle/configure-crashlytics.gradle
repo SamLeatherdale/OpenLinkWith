@@ -1,7 +1,0 @@
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
-
-dependencies {
-    playImplementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
-    playImplementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.6'
-}

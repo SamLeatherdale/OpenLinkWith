@@ -65,13 +65,11 @@ android {
       applicationIdSuffix '.floss'
       versionNameSuffix '-floss'
     }
-    play {}
+    play {
+      apply plugin: 'com.google.gms.google-services'
+      apply plugin: 'com.google.firebase.crashlytics'
+    }
   }
-}
-
-if (isPlay) {
-  apply from: configFile('configure-crashlytics.gradle')
-  apply from: configFile('play-publish.gradle')
 }
 
 configurations {
@@ -94,6 +92,11 @@ dependencies {
   implementation 'androidx.sharetarget:sharetarget:1.2.0-rc01'
 
   implementation "com.squareup.okhttp3:okhttp:$versions.okHttp"
+
+  playImplementation platform('com.google.firebase:firebase-bom:33.14.0')
+
+  playImplementation 'com.google.firebase:firebase-analytics'
+  playImplementation 'com.google.firebase:firebase-crashlytics'
 
   testImplementation project(':test-support')
 }
