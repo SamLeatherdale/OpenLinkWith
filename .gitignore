@@ -5,9 +5,12 @@ build
 /captures
 
 my-release-key.keystore
+google-services.json
 play-service-account.json
 *.pepk
 release.signing
+*.aab
+
 
 # IDEA/Android Studio ignores
 *.iml

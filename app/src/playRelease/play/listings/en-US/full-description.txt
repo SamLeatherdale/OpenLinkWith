@@ -1,28 +1,20 @@
-Share the current web page when you are in a browser to open with another app!
+This app is a revived version of the original "Open Link With" app by Said Tahsin Dane, which was removed from the Play Store in 2018, due to not updating the target Android SDK.
 
-Did it ever happen to you? You click a link (let's say a video link) and the system does not ask you anything and opens the link in the browser. And you are stuck in a web page instead of watching the video in the native app.
+Share the current web page from a browser to open in another app!
 
-There are 2 options for you. You either watch the video in the web or you remember the name of the video and search it in the app. Well, not anymore.
-
-With OpenLinkWith, you can share any webpage with it and it will ask you which applications to open the link with.
-
-Although the original intent of the application is to direct web pages to apps, it can even be used to switch between apps. Imagine you have 2 Twitter clients in your phone. You can open a tweet in the official Twitter application and then switch to an another app with the same tweet opened. Cool, hah?
-
-Although the problem discovered above is not huge, it is missing in the Android ecosystem. And I couldn't find anything doing this. So I wrote one. :)
+With Open Link With, you can share a link from your browser to this app, and it will ask you which applications to open the link with.
 
 If you find yourself sharing the same url over and over, you can use "Add to Home Screen" feature to add your favorite link from your favorite app to your home screen.
 
-I hope you find this useful. Please help me by trying it and sending feedback to me.
-
-<strong>Note:</strong This app also fixes links for some of the most popular Android applications. Not all but most of the links from these websites will be open with respective native android apps when you share them with Open Link With.
+<strong>Note:</strong This app also fixes links for some of the most popular Android applications.
+Not all but most of the links from these websites will be opened with their respective native Android apps when you share them with Open Link With.
 
 The app uses internet to: 
-- Send crash reports
+- Send crash reports to Firebase Crashlytics
 - Resolve redirects of shortened links
 - Find the title of the link while using "Add to Home Screen"
 
-The application is open source and the source can be found here:
-https://github.com/tasomaniac/OpenLinkWith/
+We <strong>never</strong> collect any of the links that you share with this app.
 
-Icon is from:
-https://www.iconfinder.com/icons/216215/flow_switch_icon#size=512
+The application is open source, and the source can be found here:
+https://github.com/SamLeatherdale/OpenLinkWith/

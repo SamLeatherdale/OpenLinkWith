@@ -1,9 +1,9 @@
-Open Link With ![Build Status](https://github.com/tasomaniac/OpenLinkWith/actions/workflows/ci.yml/badge.svg?branch=master)
+Open Link With: Redux
 ==============
 
 <a href="https://f-droid.org/repository/browse/?fdid=com.tasomaniac.openwith.floss" target="_blank">
 <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="90"/></a>
-<a href="https://play.google.com/store/apps/details?id=com.tasomaniac.openwith" target="_blank">
+<a href="https://play.google.com/store/apps/details?id=com.samleatherdale.openwith" target="_blank">
 <img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
 
 What
@@ -16,7 +16,7 @@ There are 2 options for you. You either watch the video in the web or you rememb
 
 With OpenLinkWith, you can share any webpage with it and it will ask you which applications to open the link with.
 
-Althought the original intent of the application is to direct webpages to apps, it can even be used to switch between apps. Imagine you have 2 Twitter clients in your phone. You can open a tweet in the official Twitter application and then switch to an another app with the same tweet opened. Cool, hah?
+Although the original intent of the application is to direct webpages to apps, it can even be used to switch between apps. Imagine you have 2 Twitter clients in your phone. You can open a tweet in the official Twitter application and then switch to an another app with the same tweet opened. Cool, hah?
 
 Why
 ---

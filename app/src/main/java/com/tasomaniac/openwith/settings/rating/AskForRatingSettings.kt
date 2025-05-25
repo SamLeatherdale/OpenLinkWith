@@ -84,7 +84,7 @@ class AskForRatingSettings @Inject constructor(
 
     private fun startContactEmailChooser() {
         ShareCompat.IntentBuilder(activity)
-            .addEmailTo("Said Tahsin Dane <tasomaniac+openlinkwith@gmail.com>")
+            .addEmailTo("Sam Leatherdale <me@samleatherdale.com>")
             .setSubject(context.getString(string.ask_for_rating_feedback_email_subject))
             .setType("message/rfc822")
             .startChooser()
@@ -100,7 +100,7 @@ class AskForRatingSettings @Inject constructor(
     companion object {
         private val STORE_INTENT = Intent(
             Intent.ACTION_VIEW,
-            Uri.parse("https://play.google.com/store/apps/details?id=com.tasomaniac.openwith")
+            Uri.parse("https://play.google.com/store/apps/details?id=com.samleatherdale.openwith")
         )
         private const val GOOD_RATING = 4
     }

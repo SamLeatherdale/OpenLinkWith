@@ -15,7 +15,7 @@
       android:title="@string/pref_title_market">
       <intent
         android:action="android.intent.action.VIEW"
-        android:data="https://play.google.com/store/apps/dev?id=6306600074970713582" />
+        android:data="https://play.google.com/store/apps/dev?id=8553071879957414312" />
     </Preference>
 
     <Preference
@@ -28,7 +28,7 @@
       android:title="@string/pref_title_version">
       <intent
         android:action="android.intent.action.VIEW"
-        android:data="https://play.google.com/store/apps/details?id=com.tasomaniac.openwith" />
+        android:data="https://play.google.com/store/apps/details?id=com.samleatherdale.openwith" />
     </Preference>
 
   </PreferenceCategory>

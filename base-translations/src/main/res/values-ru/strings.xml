@@ -100,7 +100,7 @@
   <string name="pref_summary_open_source">Смотрите лицензии библиотек с открытым исходным кодом.</string>
   <string name="pref_title_contact">Связаться со мной</string>
   <string name="pref_summary_contact">Отправьте мне email, прежде чем ставить одну звезду.</string>
-  <string name="pref_title_market">Больше приложений от Said Tahsin Dane</string>
+  <string name="pref_title_market">Больше приложений от Sam Leatherdale</string>
   <string name="pref_summary_market">Понравилось приложение? Почему бы не посмотреть мои другие?</string>
   <string name="pref_title_version">Версия</string>
   <string name="error">Ошибка</string>

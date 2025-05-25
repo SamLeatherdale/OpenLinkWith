@@ -93,7 +93,7 @@ Etkinleştirilmezse ön plandaki uygulama açık olsa da önerilmeye devam eder.
   <string name="pref_summary_open_source">Açık kaynak kütüphane lisanslarını gör.</string>
   <string name="pref_title_contact">Yardım</string>
   <string name="pref_summary_contact">1 yıldız vermeden önce bana email göderin.</string>
-  <string name="pref_title_market">Said Tahsin Dane\'nin diğer uygulamaları</string>
+  <string name="pref_title_market">Sam Leatherdale\'nin diğer uygulamaları</string>
   <string name="pref_summary_market">Beğendin mi? Diğer uygulamalarıma göz at?</string>
   <string name="pref_title_version">Versiyon</string>
   <string name="error">Hata</string>

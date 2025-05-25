@@ -87,7 +87,7 @@ Ako nije omogućeno, predložit će se aplikacija u prednjem planu iako je već 
   <string name="pref_summary_open_source">Pogledajte licence otvorenih biblioteka.</string>
   <string name="pref_title_contact">Kontaktiraj me</string>
   <string name="pref_summary_contact">Pošaljite mi e-poruku prije nego ocjenite aplikaciju s 1 zvjezdicom.</string>
-  <string name="pref_title_market">Više aplikacija od Said Tahsin Dane</string>
+  <string name="pref_title_market">Više aplikacija od Sam Leatherdale</string>
   <string name="pref_summary_market">Sviđa Vam se? Zašto ne biste provjerili i moje druge aplikacije?</string>
   <string name="pref_title_version">Verzija</string>
   <string name="error">Greška</string>
