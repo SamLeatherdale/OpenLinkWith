@@ -19,7 +19,7 @@
 
     <Preference
       android:title="Play Store Intent"
-      android:summary="https://play.google.com/store/apps/details?id=com.tasomaniac.openwith"/>
+      android:summary="https://play.google.com/store/apps/details?id=com.samleatherdale.openwith"/>
 
     <Preference
       android:title="Url with redirect"

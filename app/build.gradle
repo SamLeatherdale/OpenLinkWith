@@ -21,7 +21,7 @@ android {
   namespace 'com.tasomaniac.openwith'
 
   defaultConfig {
-    applicationId 'com.tasomaniac.openwith'
+    applicationId 'com.samleatherdale.openwith'
     versionCode versions.versionCode
     versionName versions.versionName
 
