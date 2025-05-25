@@ -4,8 +4,8 @@ buildscript {
         rootProject.file("gradle/$fileName")
     }
 
-    def versionMajor = 2
-    def versionMinor = 11
+    def versionMajor = 3
+    def versionMinor = 0
     def versionBuild = 0
     ext.playPublishTrack = 'internal'
 
