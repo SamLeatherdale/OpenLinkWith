@@ -4,8 +4,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.tasomaniac.openwith.HeaderAdapter
 import com.tasomaniac.openwith.SimpleTextViewHolder
-import com.tasomaniac.openwith.browser.preferred.R
-import com.tasomaniac.openwith.browser.preferred.databinding.BrowserActivityPreferredAppsBinding
+import com.tasomaniac.openwith.browser.databinding.BrowserActivityPreferredAppsBinding
 import com.tasomaniac.openwith.browser.resolver.BrowserResolver
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.extensions.componentName

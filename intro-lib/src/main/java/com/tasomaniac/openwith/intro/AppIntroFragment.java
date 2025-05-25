@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import com.tasomaniac.openwith.intro.lib.R;
 
 public class AppIntroFragment extends Fragment {
 

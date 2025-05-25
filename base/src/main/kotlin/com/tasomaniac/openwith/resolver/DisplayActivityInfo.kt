@@ -5,8 +5,8 @@ import android.content.pm.ActivityInfo
 import android.graphics.drawable.Drawable
 import android.os.Parcelable
 import com.tasomaniac.openwith.extensions.componentName
-import kotlinx.android.parcel.IgnoredOnParcel
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.IgnoredOnParcel
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DisplayActivityInfo(

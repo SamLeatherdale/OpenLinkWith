@@ -4,7 +4,7 @@ import android.content.ComponentName
 import android.view.ViewGroup
 import androidx.core.view.isGone
 import androidx.recyclerview.widget.RecyclerView
-import com.tasomaniac.openwith.browser.preferred.databinding.BrowserListItemBinding
+import com.tasomaniac.openwith.browser.databinding.BrowserListItemBinding
 import com.tasomaniac.openwith.extensions.componentName
 import com.tasomaniac.openwith.extensions.inflater
 import com.tasomaniac.openwith.resolver.DisplayActivityInfo

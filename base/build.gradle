@@ -1,3 +1,8 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-parcelize'
+}
+
 apply from: configFile('android-library-config.gradle')
 
 dependencies {
