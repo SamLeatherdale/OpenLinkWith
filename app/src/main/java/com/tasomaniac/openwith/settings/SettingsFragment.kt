@@ -3,7 +3,7 @@ package com.tasomaniac.openwith.settings
 import android.content.Context
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
-import com.tasomaniac.openwith.R
+import com.tasomaniac.openwith.base.R
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 

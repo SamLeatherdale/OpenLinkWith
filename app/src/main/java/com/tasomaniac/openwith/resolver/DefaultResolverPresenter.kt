@@ -3,8 +3,8 @@ package com.tasomaniac.openwith.resolver
 import android.content.Intent
 import android.content.res.Resources
 import android.net.Uri
-import com.tasomaniac.openwith.R
 import com.tasomaniac.openwith.data.PreferredApp
+import com.tasomaniac.openwith.translations.R
 import timber.log.Timber
 import javax.inject.Inject
 

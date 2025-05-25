@@ -1,5 +1,9 @@
 apply from: configFile('android-library-config.gradle')
 
+android {
+    namespace 'com.tasomaniac.openwith.test'
+}
+
 dependencies {
     api 'junit:junit:4.13.2'
     api 'org.assertj:assertj-core:3.21.0'

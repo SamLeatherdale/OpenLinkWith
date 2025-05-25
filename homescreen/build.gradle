@@ -1,5 +1,9 @@
 apply from: configFile('android-library-config.gradle')
 
+android {
+    namespace 'com.tasomaniac.openwith.homescreen'
+}
+
 dependencies {
     implementation project(':redirect')
     implementation project(':resolver')

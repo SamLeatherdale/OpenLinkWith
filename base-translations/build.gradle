@@ -2,5 +2,5 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion versions.compileSdk
-    namespace 'com.tasomaniac.openwith'
+    namespace 'com.tasomaniac.openwith.translations'
 }

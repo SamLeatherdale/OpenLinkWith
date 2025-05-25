@@ -18,6 +18,8 @@ def debugSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "debug.sig
 def releaseSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "release.signing"))
 
 android {
+  namespace 'com.tasomaniac.openwith'
+
   defaultConfig {
     applicationId 'com.tasomaniac.openwith'
     versionCode versions.versionCode

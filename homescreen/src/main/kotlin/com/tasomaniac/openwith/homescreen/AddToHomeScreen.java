@@ -1,19 +1,23 @@
 package com.tasomaniac.openwith.homescreen;
 
+import static com.tasomaniac.openwith.extensions.UrlsKt.extractUrlFrom;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import androidx.core.app.ShareCompat;
+
 import com.tasomaniac.openwith.data.Analytics;
 import com.tasomaniac.openwith.redirect.RedirectFixActivity;
 import com.tasomaniac.openwith.resolver.DisplayActivityInfo;
 import com.tasomaniac.openwith.resolver.ResolverActivity;
-import dagger.android.support.DaggerAppCompatActivity;
+import com.tasomaniac.openwith.translations.R;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 
-import static com.tasomaniac.openwith.extensions.UrlsKt.extractUrlFrom;
+import dagger.android.support.DaggerAppCompatActivity;
 
 public class AddToHomeScreen extends DaggerAppCompatActivity {
 

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.tasomaniac.openwith.R
 import com.tasomaniac.openwith.settings.NightModePreferences.Mode.OFF
 import com.tasomaniac.openwith.settings.NightModePreferences.Mode.SYSTEM
+import com.tasomaniac.openwith.translations.R.string
 import javax.inject.Inject
 
 class NightModePreferences @Inject constructor(
@@ -44,22 +45,22 @@ class NightModePreferences @Inject constructor(
     ) : PreferenceEntries {
         OFF(
             R.string.pref_value_night_mode_off,
-            R.string.pref_entry_night_mode_off,
+            string.pref_entry_night_mode_off,
             AppCompatDelegate.MODE_NIGHT_NO
         ),
         ON(
             R.string.pref_value_night_mode_on,
-            R.string.pref_entry_night_mode_on,
+            string.pref_entry_night_mode_on,
             AppCompatDelegate.MODE_NIGHT_YES
         ),
         BATTERY(
             R.string.pref_value_night_mode_battery,
-            R.string.pref_entry_night_mode_battery,
+            string.pref_entry_night_mode_battery,
             AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
         ),
         SYSTEM(
             R.string.pref_value_night_mode_system,
-            R.string.pref_entry_night_mode_system,
+            string.pref_entry_night_mode_system,
             AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         );
     }

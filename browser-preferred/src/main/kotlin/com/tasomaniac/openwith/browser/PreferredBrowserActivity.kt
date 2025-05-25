@@ -9,6 +9,7 @@ import com.tasomaniac.openwith.browser.resolver.BrowserResolver
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.extensions.componentName
 import com.tasomaniac.openwith.resolver.DisplayActivityInfo
+import com.tasomaniac.openwith.translations.R.string
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -56,7 +57,7 @@ class PreferredBrowserActivity : DaggerAppCompatActivity(), BrowsersAdapter.List
         recyclerView.adapter = HeaderAdapter(
             browsersAdapter,
             { viewGroup -> SimpleTextViewHolder.create(viewGroup, R.layout.preferred_header) },
-            { setText(R.string.browser_description) }
+            { setText(string.browser_description) }
         )
     }
 

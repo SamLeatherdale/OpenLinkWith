@@ -1,19 +1,24 @@
 package com.tasomaniac.openwith.intro;
 
+import static com.tasomaniac.openwith.extensions.ContextKt.restart;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.annotation.Nullable;
+
 import com.tasomaniac.openwith.data.Analytics;
+import com.tasomaniac.openwith.intro.lib.AppIntro;
+import com.tasomaniac.openwith.intro.lib.AppIntroFragment;
 import com.tasomaniac.openwith.rx.SchedulingStrategy;
 import com.tasomaniac.openwith.settings.advanced.usage.UsageStats;
 import com.tasomaniac.openwith.settings.advanced.usage.UsageStatsKt;
-import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
 
 import javax.inject.Inject;
 
-import static com.tasomaniac.openwith.extensions.ContextKt.restart;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 public class IntroActivity extends AppIntro {
 
@@ -57,12 +62,10 @@ public class IntroActivity extends AppIntro {
                 .description(R.string.description_tutorial_3)
                 .drawable(R.drawable.tutorial_3).build());
 
-        if (getResources().getBoolean(R.bool.add_to_home_screen_enabled)) {
-            addPage(new AppIntroFragment.Builder()
-                    .title(R.string.title_tutorial_4)
-                    .description(R.string.description_tutorial_4)
-                    .drawable(R.drawable.tutorial_4).build());
-        }
+        addPage(new AppIntroFragment.Builder()
+                .title(R.string.title_tutorial_4)
+                .description(R.string.description_tutorial_4)
+                .drawable(R.drawable.tutorial_4).build());
 
         if (!UsageStats.isEnabled(this)) {
             addUsageStatsSlide();
@@ -114,7 +117,7 @@ public class IntroActivity extends AppIntro {
         super.onResume();
 
         if (usageStatsSlideAdded && UsageStats.isEnabled(this)) {
-            setDoneText(getString(R.string.done));
+            setDoneText(getString(com.tasomaniac.openwith.intro.lib.R.string.done));
         }
     }
 

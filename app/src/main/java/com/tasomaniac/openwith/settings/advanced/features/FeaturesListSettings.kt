@@ -1,14 +1,12 @@
 package com.tasomaniac.openwith.settings.advanced.features
 
-import android.os.Build.VERSION_CODES.M
-import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.preference.Preference
 import com.tasomaniac.openwith.R
 import com.tasomaniac.openwith.settings.Settings
+import com.tasomaniac.openwith.translations.R.string
 import javax.inject.Inject
 
-@RequiresApi(M)
 class FeaturesListSettings @Inject constructor(
     private val featurePreferences: FeaturePreferences,
     fragment: FeaturesListFragment
@@ -27,5 +25,5 @@ class FeaturesListSettings @Inject constructor(
 
     @StringRes
     private fun Boolean.toSummary() =
-        if (this) R.string.pref_state_feature_enabled else R.string.pref_state_feature_disabled
+        if (this) string.pref_state_feature_enabled else string.pref_state_feature_disabled
 }

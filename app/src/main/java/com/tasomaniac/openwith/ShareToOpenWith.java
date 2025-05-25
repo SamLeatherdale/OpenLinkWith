@@ -1,5 +1,7 @@
 package com.tasomaniac.openwith;
 
+import static com.tasomaniac.openwith.extensions.UrlsKt.extractUrlFrom;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -8,6 +10,7 @@ import androidx.core.app.ShareCompat;
 
 import com.tasomaniac.openwith.data.Analytics;
 import com.tasomaniac.openwith.redirect.RedirectFixActivity;
+import com.tasomaniac.openwith.translations.R;
 import com.tasomaniac.openwith.util.CallerPackageExtractor;
 
 import javax.annotation.Nullable;
@@ -15,8 +18,6 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 
 import dagger.android.DaggerActivity;
-
-import static com.tasomaniac.openwith.extensions.UrlsKt.extractUrlFrom;
 
 public class ShareToOpenWith extends DaggerActivity {
 

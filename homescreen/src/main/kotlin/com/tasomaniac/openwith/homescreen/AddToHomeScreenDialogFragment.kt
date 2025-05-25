@@ -1,14 +1,12 @@
 package com.tasomaniac.openwith.homescreen
 
 import android.annotation.SuppressLint
-import android.annotation.TargetApi
 import android.app.Dialog
 import android.app.PendingIntent
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.IntentSender
 import android.graphics.BitmapFactory
-import android.os.Build.VERSION_CODES.M
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -27,12 +25,12 @@ import androidx.fragment.app.FragmentManager
 import com.tasomaniac.android.widget.DelayedProgressBar
 import com.tasomaniac.openwith.extensions.toast
 import com.tasomaniac.openwith.resolver.DisplayActivityInfo
+import com.tasomaniac.openwith.translations.R.string
 import com.tasomaniac.openwith.util.Intents
 import dagger.android.support.DaggerAppCompatDialogFragment
 import timber.log.Timber
 import javax.inject.Inject
 
-@TargetApi(M)
 class AddToHomeScreenDialogFragment : DaggerAppCompatDialogFragment() {
 
     @Inject lateinit var titleFetcher: TitleFetcher
@@ -107,10 +105,10 @@ class AddToHomeScreenDialogFragment : DaggerAppCompatDialogFragment() {
         progressBar = view.findViewById(R.id.add_to_home_screen_progress)
 
         return AlertDialog.Builder(requireContext())
-            .setPositiveButton(R.string.add) { _, _ -> createShortcutAndHandleError() }
-            .setNegativeButton(R.string.cancel, null)
+            .setPositiveButton(string.add) { _, _ -> createShortcutAndHandleError() }
+            .setNegativeButton(string.cancel, null)
             .setView(view)
-            .setTitle(R.string.add_to_homescreen)
+            .setTitle(string.add_to_homescreen)
             .create()
             .also { forceKeyboardVisible(it.window!!) }
     }
@@ -127,7 +125,7 @@ class AddToHomeScreenDialogFragment : DaggerAppCompatDialogFragment() {
     private fun createShortcutAndHandleError() {
         val success = createShortcut()
         if (!success) {
-            requireContext().toast(R.string.add_to_home_screen_error, Toast.LENGTH_SHORT)
+            requireContext().toast(string.add_to_home_screen_error, Toast.LENGTH_SHORT)
         }
     }
 

@@ -12,12 +12,12 @@ import com.tasomaniac.openwith.SimpleTextViewHolder
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.data.PreferredApp
 import com.tasomaniac.openwith.data.PreferredAppDao
-import com.tasomaniac.openwith.preferred.apps.R
 import com.tasomaniac.openwith.resolver.ApplicationViewHolder
 import com.tasomaniac.openwith.resolver.DisplayActivityInfo
 import com.tasomaniac.openwith.resolver.IconLoader
 import com.tasomaniac.openwith.resolver.ItemClickListener
 import com.tasomaniac.openwith.rx.SchedulingStrategy
+import com.tasomaniac.openwith.translations.R.string
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.Completable
 import io.reactivex.disposables.CompositeDisposable
@@ -63,7 +63,7 @@ class PreferredAppsActivity : DaggerAppCompatActivity(), ItemClickListener, AppR
         return HeaderAdapter<ApplicationViewHolder, SimpleTextViewHolder>(
             adapter,
             { viewGroup -> SimpleTextViewHolder.create(viewGroup, R.layout.preferred_header) },
-            { setText(if (adapter.itemCount == 0) R.string.desc_preferred_empty else R.string.desc_preferred) }
+            { setText(if (adapter.itemCount == 0) string.desc_preferred_empty else string.desc_preferred) }
         )
     }
 

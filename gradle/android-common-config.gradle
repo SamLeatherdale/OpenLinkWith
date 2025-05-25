@@ -2,6 +2,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 final modules_with_viewbinding = ['app', 'browser-preferred', 'resolver']
+final modules_with_build_config = ['app', 'resolver']
 if (name in modules_with_viewbinding) {
     android {
         buildFeatures {
@@ -9,9 +10,15 @@ if (name in modules_with_viewbinding) {
         }
     }
 }
+if (name in modules_with_build_config) {
+    android {
+        buildFeatures {
+            buildConfig true
+        }
+    }
+}
 
 android {
-    namespace 'com.tasomaniac.openwith'
     compileSdkVersion versions.compileSdk
 
     buildFeatures {

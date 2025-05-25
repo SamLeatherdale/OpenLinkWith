@@ -10,10 +10,9 @@ import com.tasomaniac.openwith.R
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.data.prefs.BooleanPreference
 import com.tasomaniac.openwith.data.prefs.TutorialShown
+import com.tasomaniac.openwith.databinding.ActivitySettingsBinding
 import com.tasomaniac.openwith.intro.IntroActivity
 import dagger.android.support.DaggerAppCompatActivity
-import kotlinx.android.synthetic.main.activity_settings.collapsing_toolbar
-import kotlinx.android.synthetic.main.activity_settings.toolbar
 import javax.inject.Inject
 
 class SettingsActivity :
@@ -24,6 +23,7 @@ class SettingsActivity :
     @Inject @TutorialShown lateinit var tutorialShown: BooleanPreference
     @Inject lateinit var analytics: Analytics
     @Inject lateinit var sharedPreferences: SharedPreferences
+    private lateinit var binding: ActivitySettingsBinding
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +32,9 @@ class SettingsActivity :
             tutorialShown.set(true)
         }
 
-        setContentView(R.layout.activity_settings)
-        setSupportActionBar(toolbar)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
@@ -46,7 +47,7 @@ class SettingsActivity :
 
     override fun setTitle(titleId: Int) {
         super.setTitle(titleId)
-        collapsing_toolbar.title = getString(titleId)
+        binding.collapsingToolbar.title = getString(titleId)
     }
 
     override fun onResume() {
