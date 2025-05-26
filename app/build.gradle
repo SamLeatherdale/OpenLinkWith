@@ -17,6 +17,12 @@ def gradlePrefix = "gradle/"
 def debugSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "debug.signing"))
 def releaseSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "release.signing"))
 
+if (getGradle().getStartParameter().getTaskRequests().toString().contains('play')) {
+  // Configure plugin or tasks for 'play' flavor
+  apply plugin: 'com.google.gms.google-services'
+  apply plugin: 'com.google.firebase.crashlytics'
+}
+
 android {
   namespace 'com.tasomaniac.openwith'
 
@@ -65,10 +71,7 @@ android {
       applicationIdSuffix '.floss'
       versionNameSuffix '-floss'
     }
-    play {
-      apply plugin: 'com.google.gms.google-services'
-      apply plugin: 'com.google.firebase.crashlytics'
-    }
+    play {}
   }
 }
 

@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="app (no run)" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+  <configuration default="false" name="app (run)" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
     <module name="OpenLinkWith.app" />
     <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
     <option name="DEPLOY" value="true" />
@@ -13,7 +13,7 @@
     <option name="CLEAR_APP_STORAGE" value="false" />
     <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
     <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-    <option name="MODE" value="do_nothing" />
+    <option name="MODE" value="default_activity" />
     <option name="RESTORE_ENABLED" value="false" />
     <option name="RESTORE_FILE" value="" />
     <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />

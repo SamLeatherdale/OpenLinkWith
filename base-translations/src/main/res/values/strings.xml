@@ -29,7 +29,7 @@
   <string name="browser_none">Hide browsers</string>
   <string name="browser_none_description">Never suggest browsers. Only native apps</string>
   <string name="browser_always_ask">Always ask</string>
-  <string name="browser_always_ask_description">Include all browsers into suggested apps list</string>
+  <string name="browser_always_ask_description">Include all browsers in the suggested apps list</string>
   <string name="pref_summary_selected_browser">Only %s will be suggested</string>
 
   <string name="pref_title_usage_stats">Usage Stats</string>
@@ -56,7 +56,7 @@
 
   <string name="pref_title_category_advanced">Advanced</string>
   <string name="pref_title_features">App Features</string>
-  <string name="pref_summary_features">Enable/Disable some feature</string>
+  <string name="pref_summary_features">Enable or disable app features some feature</string>
 
   <string name="pref_details_feature_add_to_homescreen"><![CDATA[
     Use <strong>Add to Home screen</strong> to quickly access your fav links with your fav apps.<br>
@@ -120,6 +120,9 @@
 
   <string name="pref_title_contact">Contact Me</string>
   <string name="pref_summary_contact">Send me an email before giving a 1 star.</string>
+
+  <string name="pref_title_source" translatable="false">View the source</string>
+  <string name="pref_summary_source" translatable="false">Check out the source code on GitHub</string>
 
   <string name="pref_title_market">More apps by Sam Leatherdale</string>
   <string name="pref_summary_market">Like it? Why not check out my other apps?</string>

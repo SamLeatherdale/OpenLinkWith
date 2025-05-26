@@ -24,6 +24,11 @@
       android:title="@string/pref_title_contact" />
 
     <Preference
+      android:key="@string/pref_key_source"
+      android:summary="@string/pref_summary_source"
+      android:title="@string/pref_title_source" />
+
+    <Preference
       android:key="@string/pref_key_version"
       android:title="@string/pref_title_version">
       <intent

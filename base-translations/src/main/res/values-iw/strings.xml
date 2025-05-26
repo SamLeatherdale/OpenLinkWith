@@ -24,7 +24,7 @@
   <string name="browser_none">הסתר דפדפן</string>
   <string name="browser_none_description">Never suggest browsers. Only native apps</string>
   <string name="browser_always_ask">Always ask</string>
-  <string name="browser_always_ask_description">Include all browsers into suggested apps list</string>
+  <string name="browser_always_ask_description">Include all browsers in the suggested apps list</string>
   <string name="pref_summary_selected_browser">Only %s will be suggested</string>
   <string name="pref_title_usage_stats">גישה לסטטיסטיקות</string>
   <string name="pref_summary_usage_stats">שפר את מיון היישומים על ידי נתינת גישה לנתוני סטטיסטיקות השימוש.</string>
@@ -45,7 +45,7 @@
   <string name="ask_for_rating_rating_message">Please find “Rate this app” section in Play Store to give a rating.\n\nThanks for the support! 🎉</string>
   <string name="pref_title_category_advanced">Advanced</string>
   <string name="pref_title_features">App Features</string>
-  <string name="pref_summary_features">Enable/Disable some feature</string>
+  <string name="pref_summary_features">Enable or disable app features some feature</string>
   <string name="pref_details_feature_add_to_homescreen"><![CDATA[    Use <strong>Add to Home screen</strong> to quickly access your fav links with your fav apps.<br>
     <br>
     When enabled, this feature adds <strong>Add to Home screen</strong> to your system <strong>Share</strong> menu.<br>

@@ -1,6 +1,7 @@
 package com.tasomaniac.openwith.settings.other
 
-import androidx.core.app.ShareCompat
+import android.content.Intent
+import androidx.core.net.toUri
 import androidx.preference.Preference
 import com.tasomaniac.openwith.BuildConfig
 import com.tasomaniac.openwith.R
@@ -28,6 +29,11 @@ class OtherSettings @Inject constructor(
             trackItemClick(it)
             true
         }
+        findPreference(R.string.pref_key_source).setOnPreferenceClickListener {
+            startViewSource()
+            trackItemClick(it)
+            true
+        }
         setupVersionPreference()
     }
 
@@ -51,10 +57,23 @@ class OtherSettings @Inject constructor(
     }
 
     private fun startContactEmailChooser() {
-        ShareCompat.IntentBuilder(activity)
-            .addEmailTo("Sam Leatherdale <me@samleatherdale.com>")
-            .setSubject(context.getString(string.app_name))
-            .setType("message/rfc822")
-            .startChooser()
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = "mailto:play@samleatherdale.com".toUri()
+            putExtra(Intent.EXTRA_SUBJECT, context.getString(string.app_name))
+        }
+        if (intent.resolveActivity(context.packageManager) != null) {
+            context.startActivity(
+                Intent.createChooser(
+                    intent, context.getString(com.tasomaniac.openwith.translations.R.string.pref_title_contact)
+                )
+            )
+        }
+    }
+
+    private fun startViewSource() {
+        val intent = Intent(Intent.ACTION_VIEW, "https://github.com/SamLeatherdale/openlinkwith".toUri())
+        if (intent.resolveActivity(context.packageManager) != null) {
+            context.startActivity(intent)
+        }
     }
 }

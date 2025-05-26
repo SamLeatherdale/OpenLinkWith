@@ -27,6 +27,7 @@
   <string name="pref_key_feature_caller_app" translatable="false">pref_feature_caller_app</string>
   <string name="pref_key_open_source" translatable="false">pref_open_source</string>
   <string name="pref_key_contact" translatable="false">pref_contact</string>
+  <string name="pref_key_source" translatable="false">pref_source</string>
   <string name="pref_key_market" translatable="false">pref_market</string>
   <string name="pref_key_version" translatable="false">pref_version</string>
 </resources>

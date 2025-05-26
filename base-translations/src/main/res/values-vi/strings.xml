@@ -45,7 +45,7 @@
   <string name="ask_for_rating_rating_message">Vui lòng tìm “Đánh giá ứng dụng này” trong Cửa hàng Play để xếp hạng.\n\nCảm ơn về sự hỗ trợ! 🎉</string>
   <string name="pref_title_category_advanced">Advanced</string>
   <string name="pref_title_features">App Features</string>
-  <string name="pref_summary_features">Enable/Disable some feature</string>
+  <string name="pref_summary_features">Enable or disable app features some feature</string>
   <string name="pref_details_feature_add_to_homescreen"><![CDATA[    Use <strong>Add to Home screen</strong> to quickly access your fav links with your fav apps.<br>
     <br>
     When enabled, this feature adds <strong>Add to Home screen</strong> to your system <strong>Share</strong> menu.<br>
