@@ -17,10 +17,13 @@ def gradlePrefix = "gradle/"
 def debugSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "debug.signing"))
 def releaseSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "release.signing"))
 
-if (getGradle().getStartParameter().getTaskRequests().toString().contains('play')) {
-  // Configure plugin or tasks for 'play' flavor
+def googleServicesPath = "app/google-services.json"
+
+if (rootProject.file(googleServicesPath).exists()) {
   apply plugin: 'com.google.gms.google-services'
   apply plugin: 'com.google.firebase.crashlytics'
+} else {
+  logger.warn(googleServicesPath + " file not found. Skipping Firebase plugins.")
 }
 
 android {

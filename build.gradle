@@ -6,14 +6,14 @@ buildscript {
 
     def versionMajor = 3
     def versionMinor = 0
-    def versionBuild = 0
+    def versionPatch = 1
     ext.playPublishTrack = 'internal'
 
     ext.versions = [
             compileSdk : 34, // Android 14
             minSdk     : 23,
-            versionCode: versionMajor * 10000 + versionMinor * 100 + versionBuild,
-            versionName: "${versionMajor}.${versionMinor}",
+            versionCode: versionMajor * 10000 + versionMinor * 100 + versionPatch,
+            versionName: "${versionMajor}.${versionMinor}.${versionPatch}",
 
             dagger     : '2.56.2',
             lifecycle  : '2.4.0',
