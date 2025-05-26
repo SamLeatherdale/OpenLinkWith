@@ -1,14 +1,14 @@
 package com.tasomaniac.openwith.settings.rating
 
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ShareCompat
+import androidx.core.net.toUri
 import androidx.preference.PreferenceCategory
 import com.tasomaniac.openwith.R
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.settings.Settings
 import com.tasomaniac.openwith.settings.SettingsFragment
+import com.tasomaniac.openwith.settings.other.Contact
 import com.tasomaniac.openwith.translations.R.string
 import javax.inject.Inject
 
@@ -73,21 +73,13 @@ class AskForRatingSettings @Inject constructor(
             }
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 condition.alreadyShown = true
-                startContactEmailChooser()
+                Contact.startContactEmailIntent(context)
                 analytics.sendEvent("AskForRating", "Dialog", "Send Email")
             }
             .setOnDismissListener {
                 remove()
             }
             .show()
-    }
-
-    private fun startContactEmailChooser() {
-        ShareCompat.IntentBuilder(activity)
-            .addEmailTo("Sam Leatherdale <me@samleatherdale.com>")
-            .setSubject(context.getString(string.ask_for_rating_feedback_email_subject))
-            .setType("message/rfc822")
-            .startChooser()
     }
 
     private fun remove() {
@@ -100,7 +92,7 @@ class AskForRatingSettings @Inject constructor(
     companion object {
         private val STORE_INTENT = Intent(
             Intent.ACTION_VIEW,
-            Uri.parse("https://play.google.com/store/apps/details?id=com.samleatherdale.openwith")
+            "https://play.google.com/store/apps/details?id=com.samleatherdale.openwith".toUri()
         )
         private const val GOOD_RATING = 4
     }

@@ -5,7 +5,6 @@ import androidx.core.net.toUri
 import androidx.preference.Preference
 import com.tasomaniac.openwith.BuildConfig
 import com.tasomaniac.openwith.R
-import com.tasomaniac.openwith.base.R.string
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.settings.Settings
 import com.tasomaniac.openwith.settings.SettingsFragment
@@ -25,7 +24,7 @@ class OtherSettings @Inject constructor(
             true
         }
         findPreference(R.string.pref_key_contact).setOnPreferenceClickListener {
-            startContactEmailChooser()
+            Contact.startContactEmailIntent(context)
             trackItemClick(it)
             true
         }
@@ -54,20 +53,6 @@ class OtherSettings @Inject constructor(
     private fun displayLicensesDialogFragment() {
         LicensesDialogFragment.newInstance()
             .show(activity.supportFragmentManager, "LicensesDialog")
-    }
-
-    private fun startContactEmailChooser() {
-        val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = "mailto:play@samleatherdale.com".toUri()
-            putExtra(Intent.EXTRA_SUBJECT, context.getString(string.app_name))
-        }
-        if (intent.resolveActivity(context.packageManager) != null) {
-            context.startActivity(
-                Intent.createChooser(
-                    intent, context.getString(com.tasomaniac.openwith.translations.R.string.pref_title_contact)
-                )
-            )
-        }
     }
 
     private fun startViewSource() {
