@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name" translatable="false">#Open Link With: Redux</string>
+  <string name="app_short_name" translatable="false">🚧 Open Link With 🆕</string>
   <string name="add_to_homescreen">#Add To Home screen</string>
 </resources>

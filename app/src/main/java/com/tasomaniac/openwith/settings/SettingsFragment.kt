@@ -22,7 +22,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onResume() {
         super.onResume()
-        requireActivity().setTitle(R.string.app_name)
+        requireActivity().setTitle(R.string.app_short_name)
         settings.forEach { it.resume() }
     }
 

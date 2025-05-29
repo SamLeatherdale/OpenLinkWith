@@ -3,29 +3,35 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:installLocation="auto">
 
-  <uses-permission-sdk-23 android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-  <uses-permission-sdk-23 android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
+  <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+  <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" />
 
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission
-    android:name="android.permission.QUERY_ALL_PACKAGES"
-    tools:ignore="QueryAllPackagesPermission" />
-  <uses-permission
     android:name="android.permission.PACKAGE_USAGE_STATS"
     tools:ignore="ProtectedPermissions" />
+
+  <!-- Courtesy of https://github.com/TrianguloY/URLCheck/blob/master/app/src/main/AndroidManifest.xml -->
+  <queries>
+    <intent>
+      <action android:name="*" />
+    </intent>
+  </queries>
 
   <!-- Force remove some permissions -->
   <uses-permission
     android:name="android.permission.READ_PHONE_STATE"
     tools:node="remove" />
+  <!-- We can ignore the ScopedStorage warnings because we're removing the permissions -->
   <uses-permission
     android:name="android.permission.WRITE_EXTERNAL_STORAGE"
     tools:ignore="ScopedStorage"
     tools:node="remove" />
   <uses-permission
     android:name="android.permission.READ_EXTERNAL_STORAGE"
-    tools:node="remove" />
+    tools:node="remove"
+    tools:ignore="ScopedStorage" />
 
   <application
     android:name=".App"

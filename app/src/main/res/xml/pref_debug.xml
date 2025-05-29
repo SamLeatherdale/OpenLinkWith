@@ -18,6 +18,14 @@
       android:summary="https://www.instagram.com/tasomaniac/"/>
 
     <Preference
+      android:title="YouTube Intent"
+      android:summary="https://www.youtube.com/watch?v=lhO3sFQ12ZY"/>
+
+    <Preference
+      android:title="Twitter Intent"
+      android:summary="https://x.com/tasomaniac"/>
+
+    <Preference
       android:title="Play Store Intent"
       android:summary="https://play.google.com/store/apps/details?id=com.samleatherdale.openwith"/>
 
