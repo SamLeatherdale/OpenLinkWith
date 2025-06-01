@@ -18,12 +18,20 @@ def debugSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "debug.sig
 def releaseSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "release.signing"))
 
 def googleServicesPath = "app/google-services.json"
+def enableGoogleServices = true
 
-if (rootProject.file(googleServicesPath).exists()) {
+gradle.startParameter.taskNames.each { taskName ->
+  if (taskName.toLowerCase().contains('floss')) {
+    enableGoogleServices = false
+  }
+}
+
+if (rootProject.file(googleServicesPath).exists() && enableGoogleServices) {
+  logger.warn("Enabling Google Services for this build.")
   apply plugin: 'com.google.gms.google-services'
   apply plugin: 'com.google.firebase.crashlytics'
 } else {
-  logger.warn(googleServicesPath + " file not found. Skipping Firebase plugins.")
+  logger.warn("Skipping Google Services for this build.")
 }
 
 android {

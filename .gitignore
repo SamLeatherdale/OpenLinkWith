@@ -10,6 +10,9 @@ play-service-account.json
 *.pepk
 release.signing
 *.aab
+*.apk
+app/*/release
+.kotlin
 
 
 # IDEA/Android Studio ignores
