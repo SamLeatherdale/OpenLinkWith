@@ -16,6 +16,8 @@
 package com.tasomaniac.openwith.resolver;
 
 import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -99,6 +101,8 @@ public class ResolverActivity extends DaggerAppCompatActivity implements
             unshorten.setVisibility(View.VISIBLE);
             unshorten.setOnClickListener((v) -> listener.onUnshorten());
         }
+
+        findViewById(R.id.button_copy).setOnClickListener(v -> copyToClipboard(intent.getDataString()));
 
         setupList(result, result.getShowExtended());
         setupFilteredItem(result.getFilteredItem());
@@ -224,6 +228,14 @@ public class ResolverActivity extends DaggerAppCompatActivity implements
     @Override
     public void onItemClick(DisplayActivityInfo activityInfo) {
         listener.onItemClick(activityInfo);
+    }
+
+    private void copyToClipboard(String text) {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("link", text);
+        clipboard.setPrimaryClip(clip);
+
+        Toast.makeText(this, "Copied to clipboard", Toast.LENGTH_SHORT).show();
     }
 
     @Override
