@@ -1,6 +1,7 @@
 package com.tasomaniac.openwith.resolver;
 
 import android.content.Intent;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
@@ -35,6 +36,8 @@ interface ResolverView {
 
         void onItemClick(DisplayActivityInfo activityInfo);
 
+        void onUnshorten();
+
         void onPackagesChanged();
 
         Listener EMPTY = new Listener() {
@@ -47,6 +50,10 @@ interface ResolverView {
             @Override
             public void onItemClick(DisplayActivityInfo activityInfo) {
                 // no-op
+            }
+
+            @Override public void onUnshorten() {
+
             }
 
             @Override

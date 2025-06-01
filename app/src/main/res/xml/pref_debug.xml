@@ -31,7 +31,7 @@
 
     <Preference
       android:title="Url with redirect"
-      android:summary="http://forward.immobilienscout24.de/9004STF/expose/78069302"/>
+      android:summary="https://bit.ly/3HjysnG"/>
 
     <Preference
       android:title="Non-Http url"

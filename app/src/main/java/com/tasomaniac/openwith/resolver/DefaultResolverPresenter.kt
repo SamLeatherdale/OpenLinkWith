@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.res.Resources
 import android.net.Uri
 import com.tasomaniac.openwith.data.PreferredApp
+import com.tasomaniac.openwith.redirect.RedirectFixActivity
 import com.tasomaniac.openwith.translations.R
 import timber.log.Timber
 import javax.inject.Inject
@@ -16,12 +17,12 @@ internal class DefaultResolverPresenter @Inject constructor(
     private val viewState: ViewState
 ) : ResolverPresenter {
 
-    override fun bind(view: ResolverView, navigation: ResolverView.Navigation) {
+    override fun bind(view: ResolverActivity, navigation: ResolverView.Navigation) {
         view.setListener(ViewListener(view, navigation))
         useCase.bind(UseCaseListener(view, navigation))
     }
 
-    override fun unbind(view: ResolverView) {
+    override fun unbind(view: ResolverActivity) {
         view.setListener(null)
         useCase.unbind()
     }
@@ -100,7 +101,7 @@ internal class DefaultResolverPresenter @Inject constructor(
     }
 
     private inner class ViewListener(
-        private val view: ResolverView,
+        private val view: ResolverActivity,
         private val navigation: ResolverView.Navigation
     ) : ResolverView.Listener {
 
@@ -116,6 +117,13 @@ internal class DefaultResolverPresenter @Inject constructor(
             } else {
                 startAndPersist(activityInfo, alwaysCheck = false)
             }
+        }
+
+        override fun onUnshorten() {
+            val intent = RedirectFixActivity.createIntent(view, view.intent.dataString ?: throw Error("No data in intent"))
+                .putExtra(RedirectFixActivity.EXTRA_UNSHORT, true)
+            view.startActivity(intent)
+            view.dismiss()
         }
 
         private fun startAndPersist(activityInfo: DisplayActivityInfo, alwaysCheck: Boolean) {

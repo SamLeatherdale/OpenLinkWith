@@ -3,6 +3,7 @@ package com.tasomaniac.openwith.resolver;
 import android.content.Intent;
 import android.content.res.Resources;
 
+import com.tasomaniac.openwith.redirect.RedirectFixActivity;
 import com.tasomaniac.openwith.translations.R;
 
 import javax.inject.Inject;
@@ -10,7 +11,6 @@ import javax.inject.Inject;
 import timber.log.Timber;
 
 class HomeScreenResolverPresenter implements ResolverPresenter {
-
     private final Resources resources;
     private final IntentResolver intentResolver;
 
@@ -20,13 +20,13 @@ class HomeScreenResolverPresenter implements ResolverPresenter {
     }
 
     @Override
-    public void bind(ResolverView view, ResolverView.Navigation navigation) {
+    public void bind(ResolverActivity view, ResolverView.Navigation navigation) {
         view.setListener(new ViewListener(intentResolver, view));
         intentResolver.bind(new IntentResolverListener(view, navigation));
     }
 
     @Override
-    public void unbind(ResolverView view) {
+    public void unbind(ResolverActivity view) {
         view.setListener(null);
         intentResolver.unbind();
     }
@@ -63,11 +63,11 @@ class HomeScreenResolverPresenter implements ResolverPresenter {
     private static class ViewListener implements ResolverView.Listener {
 
         private final IntentResolver intentResolver;
-        private final ResolverView view;
+        private final ResolverActivity activity;
 
-        ViewListener(IntentResolver intentResolver, ResolverView view) {
+        ViewListener(IntentResolver intentResolver, ResolverActivity activity) {
             this.intentResolver = intentResolver;
-            this.view = view;
+            this.activity = activity;
         }
 
         @Override
@@ -78,7 +78,14 @@ class HomeScreenResolverPresenter implements ResolverPresenter {
         @Override
         public void onItemClick(DisplayActivityInfo activityInfo) {
             Intent intent = activityInfo.intentFrom(intentResolver.getSourceIntent());
-            view.displayAddToHomeScreenDialog(activityInfo, intent);
+            activity.displayAddToHomeScreenDialog(activityInfo, intent);
+        }
+
+        @Override public void onUnshorten() {
+            Intent intent = RedirectFixActivity.createIntent(activity, activity.getIntent().getDataString())
+                    .putExtra(RedirectFixActivity.EXTRA_UNSHORT, true);
+            activity.startActivity(intent);
+            activity.dismiss();
         }
 
         @Override

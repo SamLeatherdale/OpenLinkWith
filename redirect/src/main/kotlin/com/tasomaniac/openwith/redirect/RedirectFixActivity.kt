@@ -23,13 +23,15 @@ class RedirectFixActivity : DaggerAppCompatActivity() {
     @Inject lateinit var redirectFixer: RedirectFixer
     @Inject lateinit var urlFix: UrlFix
     @Inject lateinit var schedulingStrategy: SchedulingStrategy
-    @Inject lateinit var cleanUrlsPreferences: CleanUrlsPreferences
 
     private var disposable: Disposable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.redirect_activity)
+
+        // Check for intent extra
+        val unshorten = intent.getBooleanExtra(EXTRA_UNSHORT, false)
 
         val progress = findViewById<DelayedProgressBar>(R.id.resolver_progress)
         progress.show(true)
@@ -43,7 +45,8 @@ class RedirectFixActivity : DaggerAppCompatActivity() {
             .flatMap {
                 Maybe.fromCallable<HttpUrl> { it.toHttpUrlOrNull() }
             }
-            .compose(redirectTransformer)
+            .compose(if (unshorten) redirectTransformer
+            else MaybeTransformer { source -> source })
             .map(HttpUrl::toString)
             .toSingle(source.dataString!!) // fall-back to original data if anything goes wrong
             .map(urlFix::fixUrls) // fix again after potential redirect
@@ -52,21 +55,17 @@ class RedirectFixActivity : DaggerAppCompatActivity() {
             .subscribe { intent ->
                 intent.component = ComponentName(this, ResolverActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT)
+                intent.putExtra(EXTRA_UNSHORT, unshorten)
                 startActivity(intent)
                 finish()
             }
     }
 
     private val redirectTransformer = MaybeTransformer<HttpUrl, HttpUrl> { source ->
-        if (cleanUrlsPreferences.isEnabled) {
-            source.flatMap { httpUrl ->
-                redirectFixer
-                    .followRedirects(httpUrl)
-                    .toMaybe()
-            }
-        } else {
-            // Identity; do nothing
-            source
+        source.flatMap { httpUrl ->
+            redirectFixer
+                .followRedirects(httpUrl)
+                .toMaybe()
         }
     }
 
@@ -80,10 +79,14 @@ class RedirectFixActivity : DaggerAppCompatActivity() {
         @JvmStatic
         fun createIntent(activity: Activity, foundUrl: String): Intent {
             return Intent(activity, RedirectFixActivity::class.java)
+                .putExtra(EXTRA_UNSHORT, false)
                 .putExtras(activity.intent)
                 .setAction(Intent.ACTION_VIEW)
                 .setData(Uri.parse(foundUrl))
         }
+
+        @JvmField
+        val EXTRA_UNSHORT = "com.tasomaniac.openwith.resolver.UNSHORT"
 
         private fun Intent.withUrl(url: String): Intent = setData(Uri.parse(url))
     }

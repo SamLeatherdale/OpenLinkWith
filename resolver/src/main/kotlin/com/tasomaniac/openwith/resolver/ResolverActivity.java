@@ -24,6 +24,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +35,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tasomaniac.openwith.HeaderAdapter;
 import com.tasomaniac.openwith.SimpleTextViewHolder;
 import com.tasomaniac.openwith.util.IntentFixer;
+
+import java.util.Objects;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;
@@ -83,6 +86,20 @@ public class ResolverActivity extends DaggerAppCompatActivity implements
     @SuppressLint("ClickableViewAccessibility") @Override
     public void displayData(IntentResolverResult result) {
         setContentView(result.getFilteredItem() != null ? R.layout.resolver_list_with_default : R.layout.resolver_list);
+
+        // Show the URL from the intent
+        Intent intent = getIntent();
+        TextView urlView = findViewById(R.id.link_url);
+        urlView.setText(intent.getDataString());
+
+        boolean alreadyUnshortened = intent.getBooleanExtra("com.tasomaniac.openwith.resolver.UNSHORT", false);
+
+        if (!alreadyUnshortened && Objects.equals(intent.getScheme(), "http") || Objects.equals(intent.getScheme(), "https")) {
+            Button unshorten = findViewById(R.id.button_unshorten);
+            unshorten.setVisibility(View.VISIBLE);
+            unshorten.setOnClickListener((v) -> listener.onUnshorten());
+        }
+
         setupList(result, result.getShowExtended());
         setupFilteredItem(result.getFilteredItem());
         ResolverDrawerLayout rdl = findViewById(R.id.contentPanel);

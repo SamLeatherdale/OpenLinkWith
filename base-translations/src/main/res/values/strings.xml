@@ -5,6 +5,7 @@
   <string name="use_a_different_app">Use a different app</string>
   <string name="activity_resolver_use_once">Just Once</string>
   <string name="activity_resolver_use_always">Always</string>
+  <string name="activity_resolver_unshorten" translatable="false">Unshorten</string>
   <string name="which_view_application">Open with</string>
   <string name="which_view_application_named">Open with %1$s</string>
   <string name="desc_preferred">Preferred applications to be used directly when the below links shared with this app.\n\nTap to remove a preferred app.</string>
