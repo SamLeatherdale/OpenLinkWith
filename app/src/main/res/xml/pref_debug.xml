@@ -30,15 +30,19 @@
       android:summary="https://play.google.com/store/apps/details?id=com.samleatherdale.openwith"/>
 
     <Preference
-      android:title="Url with redirect"
+      android:title="URL with redirect"
       android:summary="https://bit.ly/3HjysnG"/>
 
     <Preference
-      android:title="Non-Http url"
+      android:title="Google search with redirect"
+      android:summary="https://www.google.com/url?q=https://developer.android.com/" />
+
+    <Preference
+      android:title="Non-HTTP URL"
       android:summary="is24://retargetShowSearchForm"/>
 
     <Preference
-      android:title="Missing-Http Intent"
+      android:title="Missing HTTP Intent"
       android:summary="www.google.com"/>
 
   </PreferenceCategory>

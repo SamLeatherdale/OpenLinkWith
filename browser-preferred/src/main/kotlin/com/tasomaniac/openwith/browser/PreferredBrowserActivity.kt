@@ -1,6 +1,9 @@
 package com.tasomaniac.openwith.browser
 
 import android.os.Bundle
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.tasomaniac.openwith.HeaderAdapter
 import com.tasomaniac.openwith.SimpleTextViewHolder
@@ -31,6 +34,12 @@ class PreferredBrowserActivity : DaggerAppCompatActivity(), BrowsersAdapter.List
         super.onCreate(savedInstanceState)
         val binding = BrowserActivityPreferredAppsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(bottom = systemBars.bottom)
+            insets
+        }
 
         analytics.sendScreenView("Browser Apps")
         setupToolbar()

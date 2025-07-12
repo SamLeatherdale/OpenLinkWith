@@ -1,0 +1,26 @@
+name: Release
+on:
+  push:
+    branches:
+      - master
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version-file: .java-version
+          cache: 'gradle'
+      # https://developer.android.com/tools/variables
+      - name: Create local.properties
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+      - run: .github/scripts/encode.sh decode
+        env:
+          APP_GOOGLE_SERVICES_JSON: ${{ secrets.APP_GOOGLE_SERVICES_JSON }}
+          FASTLANE_IAM_KEY_JSON: ${{ secrets.FASTLANE_IAM_KEY_JSON }}
+          GRADLE_RELEASE_KEYSTORE: ${{ secrets.GRADLE_RELEASE_KEYSTORE }}
+          GRADLE_RELEASE_SIGNING: ${{ secrets.GRADLE_RELEASE_SIGNING }}
+      - run: .github/scripts/lint-changelog.sh
+      - run: .github/scripts/release.sh
