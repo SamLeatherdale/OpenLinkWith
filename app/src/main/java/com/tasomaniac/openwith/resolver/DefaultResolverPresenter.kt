@@ -78,16 +78,6 @@ internal class DefaultResolverPresenter @Inject constructor(
                 view.toast(R.string.empty_resolver_activity)
                 true
             }
-            result.totalCount() == 1 -> {
-                val activityInfo = result.filteredItem ?: result.resolved[0]
-                try {
-                    navigation.startPreferred(activityInfo.intentFrom(sourceIntent), activityInfo.displayLabel)
-                    true
-                } catch (e: Exception) {
-                    Timber.e(e)
-                    false
-                }
-            }
             else -> false
         }
 

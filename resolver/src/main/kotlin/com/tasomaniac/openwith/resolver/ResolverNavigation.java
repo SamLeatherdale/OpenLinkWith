@@ -42,7 +42,7 @@ class ResolverNavigation implements ResolverView.Navigation {
     private void displayWarning(Intent intent, CharSequence appLabel) {
         String message = activity.getString(R.string.warning_open_link_with_name, appLabel);
         if (BuildConfig.DEBUG) {
-            message += "\nUrl: " + intent.getDataString();
+            message += "\nURL: " + intent.getDataString();
         }
         int length = BuildConfig.DEBUG ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT;
         Toast.makeText(activity, message, length).show();
