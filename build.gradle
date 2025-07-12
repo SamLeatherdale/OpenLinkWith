@@ -10,7 +10,7 @@ buildscript {
     ext.playPublishTrack = 'internal'
 
     ext.versions = [
-            compileSdk : 34, // Android 14
+            compileSdk : 35, // Android 15
             minSdk     : 23,
             versionCode: versionMajor * 10000 + versionMinor * 100 + versionPatch,
             versionName: "${versionMajor}.${versionMinor}.${versionPatch}",

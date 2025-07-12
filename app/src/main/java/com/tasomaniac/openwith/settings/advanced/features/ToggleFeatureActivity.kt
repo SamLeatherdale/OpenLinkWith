@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.StringRes
 import androidx.core.text.parseAsHtml
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.preference.Preference
 import com.tasomaniac.openwith.data.Analytics
 import com.tasomaniac.openwith.databinding.ToggleFeatureActivityBinding
@@ -29,6 +32,12 @@ class ToggleFeatureActivity : DaggerAppCompatActivity() {
 
         binding = ToggleFeatureActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            view.updatePadding(bottom = systemBars.bottom)
+            insets
+        }
 
         val feature = intent.featureKey.toFeature()
         setupInitialState(feature)

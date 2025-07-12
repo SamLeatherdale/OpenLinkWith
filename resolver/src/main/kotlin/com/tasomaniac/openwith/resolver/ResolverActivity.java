@@ -32,6 +32,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.StringRes;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tasomaniac.openwith.HeaderAdapter;
@@ -88,6 +90,20 @@ public class ResolverActivity extends DaggerAppCompatActivity implements
     @SuppressLint("ClickableViewAccessibility") @Override
     public void displayData(IntentResolverResult result) {
         setContentView(result.getFilteredItem() != null ? R.layout.resolver_list_with_default : R.layout.resolver_list);
+
+        View spacer = findViewById(R.id.nav_bar_spacer);
+
+        // Set up window insets for the navigation bar spacer
+        ViewCompat.setOnApplyWindowInsetsListener(spacer, (view, windowInsets) -> {
+            int bottom = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
+            ViewGroup.LayoutParams params = view.getLayoutParams();
+            params.height = bottom;
+            view.setLayoutParams(params);
+            return windowInsets;
+        });
+
+        // Request insets
+        ViewCompat.requestApplyInsets(spacer);
 
         // Show the URL from the intent
         Intent intent = getIntent();
