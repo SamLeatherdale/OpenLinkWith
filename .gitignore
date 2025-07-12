@@ -3,10 +3,13 @@
 .DS_Store
 build
 /captures
+out/
 
-my-release-key.keystore
+release.keystore
 google-services.json
 play-service-account.json
+iam-key.json
+fastlane/report.xml
 *.pepk
 release.signing
 *.aab

@@ -4,16 +4,13 @@ buildscript {
         rootProject.file("gradle/$fileName")
     }
 
-    def versionMajor = 3
-    def versionMinor = 2
-    def versionPatch = 0
     ext.playPublishTrack = 'internal'
 
     ext.versions = [
             compileSdk : 35, // Android 15
             minSdk     : 23,
-            versionCode: versionMajor * 10000 + versionMinor * 100 + versionPatch,
-            versionName: "${versionMajor}.${versionMinor}.${versionPatch}",
+            versionCode: 30300,
+            versionName: "3.3.0",
 
             dagger     : '2.56.2',
             lifecycle  : '2.4.0',

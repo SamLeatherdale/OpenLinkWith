@@ -1,0 +1,56 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(
+      tasks: ["evaluateViolations", "testDebugUnitTest", "testFlossDebugUnitTest"]
+    )
+  end
+
+  desc "Build bundle"
+  lane :build do
+    gradle(
+      task: "bundle",
+      build_type: "Release",
+      flavor: "Play"
+    )
+  end
+
+  desc "Release a new version to Google Play"
+  lane :release do
+    # Convert current version to integer
+    current_version = ENV["VERSION_CODE"].to_i
+    publish_version = google_play_track_version_codes(
+      track: "internal"
+    ).first
+
+    UI.message("Published: #{publish_version}, Current: #{current_version}")
+    if publish_version >= current_version
+      UI.important("Version code already published, skipping upload")
+      exit(0)
+    end
+
+    build
+    supply(
+      track: "internal",
+      skip_upload_apk: true,
+      sync_image_upload: true
+    )
+  end
+end
