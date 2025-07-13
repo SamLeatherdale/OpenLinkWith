@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -35,6 +37,14 @@ public abstract class AppIntro extends DaggerAppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_layout);
+
+        View rootView = findViewById(android.R.id.content);
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (view, insets) -> {
+            int bottom = insets.getInsets(WindowInsetsCompat.Type.systemBars()).bottom;
+            view.setPadding(view.getPaddingLeft(), view.getPaddingTop(),
+                           view.getPaddingRight(), bottom);
+            return insets;
+        });
 
         findViewById(R.id.skip).setOnClickListener(v -> onSkipPressed());
         nextButton = findViewById(R.id.next);
