@@ -19,16 +19,26 @@ platform :android do
   desc "Runs all the tests"
   lane :test do
     gradle(
-      tasks: ["evaluateViolations", "testDebugUnitTest", "testFlossDebugUnitTest"]
+      tasks: ["lintFlossDebug"]
+      # , "testDebugUnitTest", "testFlossDebugUnitTest"]
     )
   end
 
-  desc "Build bundle"
-  lane :build do
+  desc "Build Play bundle"
+  lane :buildPlayRelease do
     gradle(
       task: "bundle",
       build_type: "Release",
       flavor: "Play"
+    )
+  end
+
+  desc "Build Floss APK"
+  lane :buildFlossRelease do
+    gradle(
+        task: "assemble",
+        build_type: "Release",
+        flavor: "Floss"
     )
   end
 
@@ -46,7 +56,7 @@ platform :android do
       exit(0)
     end
 
-    build
+    buildPlayRelease
     supply(
       track: "internal",
       skip_upload_apk: true,

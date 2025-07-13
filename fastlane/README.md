@@ -23,13 +23,21 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Runs all the tests
 
-### android build
+### android buildPlayRelease
 
 ```sh
-[bundle exec] fastlane android build
+[bundle exec] fastlane android buildPlayRelease
 ```
 
-Build bundle
+Build Play bundle
+
+### android buildFlossRelease
+
+```sh
+[bundle exec] fastlane android buildFlossRelease
+```
+
+Build Floss APK
 
 ### android release
 

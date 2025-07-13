@@ -27,4 +27,12 @@ jobs:
           GRADLE_RELEASE_KEYSTORE: ${{ secrets.GRADLE_RELEASE_KEYSTORE }}
           GRADLE_RELEASE_SIGNING: ${{ secrets.GRADLE_RELEASE_SIGNING }}
       - run: .github/scripts/lint-changelog.sh
+      - run: fastlane test
+      - name: Upload lint results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: "**/build/reports/**/*.html"
+          retention-days: 14
+
       # - run: fastlane test
