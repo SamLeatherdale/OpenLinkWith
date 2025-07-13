@@ -1,8 +1,0 @@
-Help translate the app into your language:
-https://crowdin.com/project/open-link-with
-
-v2.9
-🔍 New Privacy Feature 🔍
-Go into Advanced Settings and enable cleaning up marketing/tracking parameters!
-
-<strong>Tip:</strong> Did you know that you can set OLW as a browser. Go to Advanced settings to enable.

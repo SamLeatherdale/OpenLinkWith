@@ -14,7 +14,6 @@ buildscript {
 
             dagger     : '2.56.2',
             lifecycle  : '2.4.0',
-            ktlint     : '0.39.0',
             okHttp     : '4.8.0',
             room       : '2.4.0',
     ]
@@ -22,7 +21,6 @@ buildscript {
     dependencies {
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.40.0'
         classpath 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.14.1'
-        classpath 'org.jlleitschuh.gradle:ktlint-gradle:9.4.1'
         classpath 'com.gradleup:static-analysis-plugin:1.4'
     }
 }

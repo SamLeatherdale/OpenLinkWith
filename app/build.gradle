@@ -3,19 +3,23 @@ plugins {
 }
 apply from: configFile('android-common-config.gradle')
 
-static def loadPropertiesFile(File file) {
+def loadPropertiesFile(File file) {
   def props = new Properties()
   if (file.exists()) {
-    file.withInputStream { stream -> props.load(stream) }
+    file.withInputStream { stream ->
+      props.load(stream)
+    }
   } else {
-    throw new GradleException("Required properties file not found: ${file.absolutePath}")
+    logger.warn("Properties file not found: " + file.getAbsolutePath())
   }
   return props
 }
 
 def gradlePrefix = "gradle/"
-def debugSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "debug.signing"))
-def releaseSigning = loadPropertiesFile(rootProject.file(gradlePrefix + "release.signing"))
+def debugSigningFile = rootProject.file(gradlePrefix + "debug.signing")
+def debugSigning = loadPropertiesFile(debugSigningFile)
+def releaseSigningFile = rootProject.file(gradlePrefix + "release.signing")
+def releaseSigning = loadPropertiesFile(releaseSigningFile)
 
 def googleServicesPath = "app/google-services.json"
 def enableGoogleServices = true
@@ -52,11 +56,13 @@ android {
         keyAlias debugSigning['keyAlias']
         keyPassword debugSigning['keyPassword']
       }
-      release {
-        storeFile rootProject.file(gradlePrefix + releaseSigning['storeFile'])
-        storePassword releaseSigning['storePassword']
-        keyAlias releaseSigning['keyAlias']
-        keyPassword releaseSigning['keyPassword']
+      if (releaseSigningFile.exists()) {
+        release {
+          storeFile rootProject.file(gradlePrefix + releaseSigning['storeFile'])
+          storePassword releaseSigning['storePassword']
+          keyAlias releaseSigning['keyAlias']
+          keyPassword releaseSigning['keyPassword']
+        }
       }
   }
 
@@ -72,7 +78,9 @@ android {
       minifyEnabled true
       shrinkResources true
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-      signingConfig signingConfigs.release
+      if (releaseSigningFile.exists()) {
+        signingConfig signingConfigs.release
+      }
     }
   }
 

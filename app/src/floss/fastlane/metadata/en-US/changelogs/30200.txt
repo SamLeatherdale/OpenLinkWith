@@ -1,0 +1,3 @@
+Disable link unshortening by default. 
+You can now unshorten on demand using the unshorten button.
+You can also copy the link with the copy button.
