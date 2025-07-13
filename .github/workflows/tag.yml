@@ -30,7 +30,6 @@ jobs:
         # https://github.com/softprops/action-gh-release
         uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2.3.2
         with:
-            tag_name: ${{ github.ref }}
             fail_on_unmatched_files: true
             make_latest: true
             body_path: ${{ env.CHANGELOG_FILE }}
