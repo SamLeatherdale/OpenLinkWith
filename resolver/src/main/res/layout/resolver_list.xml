@@ -69,10 +69,8 @@
     android:gravity="end|center_vertical"
     android:measureWithLargestChild="true"
     android:orientation="horizontal"
-    android:paddingBottom="8dp"
-    android:paddingEnd="12dp"
     android:paddingStart="12dp"
-    android:paddingTop="8dp"
+    android:paddingEnd="12dp"
     android:visibility="gone"
     app:layout_alwaysShow="true"
     app:layout_ignoreOffset="true">
@@ -99,14 +97,5 @@
       android:minHeight="@dimen/alert_dialog_button_bar_height"
       android:text="@string/activity_resolver_use_always" />
   </LinearLayout>
-
-  <View
-    android:id="@+id/nav_bar_spacer"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:background="@color/window_background"
-    android:elevation="8dp"
-    app:layout_alwaysShow="true"
-    app:layout_ignoreOffset="true" />
 
 </com.tasomaniac.openwith.resolver.ResolverDrawerLayout>

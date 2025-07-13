@@ -36,7 +36,7 @@
     <LinearLayout
       android:id="@+id/preferred_item"
       android:layout_width="match_parent"
-      android:layout_height="64dp"
+      android:layout_height="48dp"
       android:orientation="horizontal">
 
       <ImageView
@@ -45,14 +45,14 @@
         android:layout_height="24dp"
         android:layout_gravity="start|top"
         android:layout_marginStart="?attr/listPreferredItemPaddingLeft"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@null"
         android:scaleType="fitCenter" />
 
       <TextView
         android:id="@+id/title"
         android:layout_width="0dp"
-        android:layout_height="?attr/listPreferredItemHeight"
+        android:layout_height="?attr/listPreferredItemHeightSmall"
         android:layout_marginStart="?attr/listPreferredItemPaddingLeft"
         android:layout_marginEnd="?attr/listPreferredItemPaddingLeft"
         android:layout_weight="1"
@@ -69,10 +69,8 @@
       android:gravity="end|center_vertical"
       android:measureWithLargestChild="true"
       android:orientation="horizontal"
-      android:paddingBottom="8dp"
       android:paddingLeft="12dp"
       android:paddingRight="12dp"
-      android:paddingTop="8dp"
       android:visibility="gone"
       app:layout_alwaysShow="true">
 
@@ -114,14 +112,5 @@
     android:scrollbarStyle="outsideOverlay"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     android:orientation="vertical" />
-
-  <View
-    android:id="@+id/nav_bar_spacer"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:background="@color/window_background"
-    android:elevation="8dp"
-    app:layout_alwaysShow="true"
-    app:layout_ignoreOffset="true" />
 
 </com.tasomaniac.openwith.resolver.ResolverDrawerLayout>

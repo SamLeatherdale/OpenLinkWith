@@ -91,19 +91,17 @@ public class ResolverActivity extends DaggerAppCompatActivity implements
     public void displayData(IntentResolverResult result) {
         setContentView(result.getFilteredItem() != null ? R.layout.resolver_list_with_default : R.layout.resolver_list);
 
-        View spacer = findViewById(R.id.nav_bar_spacer);
+        View contentPanel = findViewById(R.id.contentPanel);
 
-        // Set up window insets for the navigation bar spacer
-        ViewCompat.setOnApplyWindowInsetsListener(spacer, (view, windowInsets) -> {
+        // Set up window insets for the content panel
+        ViewCompat.setOnApplyWindowInsetsListener(contentPanel, (view, windowInsets) -> {
             int bottom = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
-            ViewGroup.LayoutParams params = view.getLayoutParams();
-            params.height = bottom;
-            view.setLayoutParams(params);
+            view.setPadding(view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), bottom);
             return windowInsets;
         });
 
         // Request insets
-        ViewCompat.requestApplyInsets(spacer);
+        ViewCompat.requestApplyInsets(contentPanel);
 
         // Show the URL from the intent
         Intent intent = getIntent();

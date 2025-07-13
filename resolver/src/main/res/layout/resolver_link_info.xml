@@ -31,9 +31,7 @@
     android:measureWithLargestChild="true"
     android:orientation="horizontal"
     android:paddingLeft="12dp"
-    android:paddingTop="8dp"
-    android:paddingRight="12dp"
-    android:paddingBottom="8dp">
+    android:paddingRight="12dp">
 
     <Button
       android:id="@+id/button_unshorten"
