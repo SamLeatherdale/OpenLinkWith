@@ -1,0 +1,5 @@
+Add support for Android 15 + 16
+
+Always show the app chooser dialog even if there is only one app to handle a link.
+
+Fix bug introduced in 3.2.0 that doesn't show the "Just Once" / "Always" buttons in the app chooser dialog.

@@ -9,8 +9,8 @@ buildscript {
     ext.versions = [
             compileSdk : 36, // Android 16
             minSdk     : 23, // Android 6.0 (Marshmallow)
-            versionCode: 30300,
-            versionName: "3.3.0",
+            versionCode: 30301,
+            versionName: "3.3.1",
 
             dagger     : '2.56.2',
             lifecycle  : '2.4.0',
@@ -41,3 +41,15 @@ allprojects {
 }
 
 apply from: configFile('configure-dependency-updates.gradle')
+
+tasks.register('copyChangelogs') {
+    doLast {
+        def sourceDir = 'fastlane/metadata/android/en-US/changelogs'
+        def destDir = 'app/src/floss/fastlane/metadata/en-US/changelogs'
+
+        copy {
+            from sourceDir
+            into destDir
+        }
+    }
+}
