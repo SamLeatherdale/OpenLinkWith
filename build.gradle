@@ -7,7 +7,7 @@ buildscript {
     ext.playPublishTrack = 'internal'
 
     ext.versions = [
-            compileSdk : 35, // Android 15
+            compileSdk : 36, // Android 16
             minSdk     : 23,
             versionCode: 30300,
             versionName: "3.3.0",
