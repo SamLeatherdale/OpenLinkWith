@@ -11,6 +11,9 @@ check_changelog() {
   local changelog_file="${changelog_dir}/${version_code}.txt"
   if [ -f "$changelog_file" ]; then
     echo "Changelog file $changelog_file exists."
+    if [ -f "$GITHUB_ENV" ]; then
+      echo "CHANGELOG_FILE=$changelog_file" >> "$GITHUB_ENV"
+    fi
   else
     echo "Changelog file $changelog_file does not exist."
     exit 1
