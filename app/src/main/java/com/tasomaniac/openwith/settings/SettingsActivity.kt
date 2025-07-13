@@ -69,11 +69,6 @@ class SettingsActivity :
         super.onPause()
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        finish()
-        return true
-    }
-
     override fun onPreferenceStartFragment(caller: PreferenceFragmentCompat, pref: Preference): Boolean {
         supportFragmentManager.commit {
             val fragment = supportFragmentManager.fragmentFactory.instantiate(classLoader, pref.fragment)
