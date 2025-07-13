@@ -1,12 +1,13 @@
 # Open Link With: Redux
 
 <a href="https://play.google.com/store/apps/details?id=com.samleatherdale.openwith" target="_blank">
-<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" /></a>
 
-The original, unmaintained version of the app is still available on F-Droid:
+<a href="https://apt.izzysoft.de/fdroid/index/apk/com.samleatherdale.openwith.floss" target="_blank">
+<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.svg" alt="Get it onIzzyOnDroid" /></a>
 
-<a href="https://f-droid.org/repository/browse/?fdid=com.tasomaniac.openwith.floss" target="_blank">
-<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="90"/></a>
+<a href="https://apt.izzysoft.de/fdroid/index/apk/com.samleatherdale.openwith.floss" target="_blank">
+<img src="https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.samleatherdale.openwith.floss&label=IzzyOnDroid" alt="Get it onIzzyOnDroid" /></a>
 
 ## What is Open Link With: Redux?
 

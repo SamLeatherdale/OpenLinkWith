@@ -2,8 +2,6 @@ package com.tasomaniac.openwith.settings
 
 import android.app.Application
 import android.content.ClipboardManager
-import android.os.Build.VERSION.SDK_INT
-import android.os.Build.VERSION_CODES.M
 import androidx.core.content.getSystemService
 import com.tasomaniac.openwith.BuildConfig
 import com.tasomaniac.openwith.settings.advanced.AdvancedSettings
@@ -37,7 +35,7 @@ class SettingsModule {
     @Provides
     @ElementsIntoSet
     fun disableFeaturesSettings(settings: DisableFeaturesSettings): Set<Settings> =
-        if (SDK_INT >= M) setOf(settings) else emptySet()
+        setOf(settings)
 
     @Provides
     @ElementsIntoSet

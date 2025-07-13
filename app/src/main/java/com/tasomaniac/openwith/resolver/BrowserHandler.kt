@@ -7,7 +7,6 @@ import com.tasomaniac.openwith.browser.BrowserPreferences.Mode
 import com.tasomaniac.openwith.browser.resolver.BrowserResolver
 import com.tasomaniac.openwith.extensions.componentName
 import com.tasomaniac.openwith.extensions.isEqualTo
-import java.util.ArrayList
 import javax.inject.Inject
 
 class BrowserHandler(
@@ -29,9 +28,7 @@ class BrowserHandler(
      */
     fun handleBrowsers() {
         val browsers = browserResolver.queryBrowsers()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            addAllBrowsers(browsers)
-        }
+        addAllBrowsers(browsers)
 
         val mode = browserPreferences.mode
         when (mode) {
