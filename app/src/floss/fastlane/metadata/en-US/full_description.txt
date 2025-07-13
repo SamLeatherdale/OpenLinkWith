@@ -1,4 +1,4 @@
-This app is a revived version of the original "Open Link With" app by Said Tahsin Dane, which was removed from the Play Store in 2018, due to not updating the target Android SDK.
+This app is a revived version of the original "Open Link With" app by Said Tahsin Dane, which was removed from the Play Store in 2024, due to not updating the target Android SDK to Android 13.
 
 Share the current web page from a browser to open in another app!
 
@@ -6,11 +6,11 @@ With Open Link With, you can share a link from your browser to this app, and it 
 
 If you find yourself sharing the same url over and over, you can use "Add to Home Screen" feature to add your favorite link from your favorite app to your home screen.
 
-<strong>Note:</strong This app also fixes links for some of the most popular Android applications.
+<strong>Note:</strong> This app also fixes links for some of the most popular Android applications.
 Not all but most of the links from these websites will be opened with their respective native Android apps when you share them with Open Link With.
 
-The app uses internet to: 
-- Send crash reports to Firebase Crashlytics
+The app uses internet to:
+
 - Resolve redirects of shortened links
 - Find the title of the link while using "Add to Home Screen"
 
