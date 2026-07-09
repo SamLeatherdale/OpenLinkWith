@@ -1,0 +1,9 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <com.tasomaniac.openwith.settings.KeepAndroidOpenBannerPreference
+    android:order="0"
+    android:key="@string/pref_key_keep_android_open"
+    android:title="@string/keep_android_open_banner"
+    android:layout="@layout/keep_android_open_banner_preference" />
+
+</PreferenceScreen>

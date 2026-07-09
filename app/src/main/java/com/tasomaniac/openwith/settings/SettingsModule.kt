@@ -7,6 +7,7 @@ import com.tasomaniac.openwith.BuildConfig
 import com.tasomaniac.openwith.settings.advanced.AdvancedSettings
 import com.tasomaniac.openwith.settings.advanced.DisableFeaturesSettings
 import com.tasomaniac.openwith.settings.advanced.usage.UsageAccessSettings
+import com.tasomaniac.openwith.settings.maintenance.MaintenanceModeSettings
 import com.tasomaniac.openwith.settings.other.OtherSettings
 import com.tasomaniac.openwith.settings.rating.AskForRatingSettings
 import dagger.Module
@@ -23,14 +24,26 @@ class SettingsModule {
     @ElementsIntoSet
     @Suppress("LongParameterList")
     fun settings(
+        keepAndroidOpen: KeepAndroidOpenSettings,
         clipboard: ClipboardSettings,
         askForRating: AskForRatingSettings,
+        maintenance: MaintenanceModeSettings,
         general: GeneralSettings,
         display: DisplaySettings,
         advanced: AdvancedSettings,
         usageAccess: UsageAccessSettings,
         other: OtherSettings
-    ): Set<Settings> = setOf(clipboard, askForRating, general, display, advanced, usageAccess, other)
+    ): Set<Settings> = setOf(
+        keepAndroidOpen,
+        clipboard,
+        askForRating,
+        maintenance,
+        general,
+        display,
+        advanced,
+        usageAccess,
+        other
+    )
 
     @Provides
     @ElementsIntoSet

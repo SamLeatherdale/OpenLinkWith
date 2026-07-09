@@ -1,0 +1,5 @@
+Life-support mode: this app will keep getting Android version updates, but no new features or bug fixes.
+
+Recommended alternatives: URLCheck, LinkSheet, or Sidestep.
+
+Added a Keep Android Open banner.

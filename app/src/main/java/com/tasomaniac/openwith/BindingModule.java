@@ -15,6 +15,7 @@ import com.tasomaniac.openwith.settings.SettingsModule;
 import com.tasomaniac.openwith.settings.advanced.features.FeatureToggleModule;
 import com.tasomaniac.openwith.settings.advanced.features.FeaturesListFragment;
 import com.tasomaniac.openwith.settings.advanced.features.ToggleFeatureActivity;
+import com.tasomaniac.openwith.settings.maintenance.MaintenanceModeDialogFragment;
 import com.tasomaniac.openwith.util.CallerPackageExtractor;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -43,6 +44,9 @@ interface BindingModule {
 
     @ContributesAndroidInjector(modules = SettingsModule.class)
     SettingsFragment settingsFragment();
+
+    @ContributesAndroidInjector
+    MaintenanceModeDialogFragment maintenanceModeDialogFragment();
 
     @ContributesAndroidInjector FeaturesListFragment advancedFeaturesFragment();
 

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <color name="error_color">#FFDD2C00</color>
+  <color name="keep_android_open_banner_background">#FFD32F2F</color>
+  <color name="keep_android_open_banner_text">#FFFFFFFF</color>
+  <color name="keep_android_open_banner_link">#FFFFCDD2</color>
 </resources>

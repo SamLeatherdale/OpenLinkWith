@@ -16,6 +16,9 @@
   <string name="pref_key_clipboard" translatable="false">pref_clipboard</string>
   <string name="pref_key_category_ask_for_rating" translatable="false">pref_category_ask_for_rating</string>
   <string name="pref_key_ask_for_rating" translatable="false">pref_ask_for_rating</string>
+  <string name="pref_key_keep_android_open" translatable="false">pref_keep_android_open</string>
+  <string name="pref_key_category_maintenance" translatable="false">pref_category_maintenance</string>
+  <string name="pref_key_maintenance" translatable="false">pref_maintenance</string>
   <string name="pref_key_category_advanced" translatable="false">pref_advanced</string>
   <string name="pref_key_features" translatable="false">pref_features</string>
   <string name="pref_key_feature_add_to_homescreen" translatable="false">pref_feature_add_to_homescreen</string>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+      android:id="@+id/maintenance_message"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingStart="@dimen/keyline_1"
+      android:paddingEnd="@dimen/keyline_1"
+      android:paddingBottom="16dp"
+      android:text="@string/maintenance_mode_message"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:textColor="?android:attr/textColorPrimary" />
+
+    <LinearLayout
+      android:id="@+id/app_urlcheck"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?selectableItemBackground"
+      android:gravity="center_vertical"
+      android:minHeight="?attr/listPreferredItemHeight"
+      android:orientation="horizontal"
+      android:paddingStart="@dimen/keyline_1"
+      android:paddingEnd="@dimen/keyline_1">
+
+      <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_urlcheck" />
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/keyline_1"
+        android:paddingEnd="@dimen/keyline_1">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:ellipsize="marquee"
+          android:singleLine="true"
+          android:text="@string/maintenance_app_urlcheck_title"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:textColor="?android:attr/textColorPrimary" />
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:ellipsize="marquee"
+          android:singleLine="true"
+          android:text="@string/maintenance_app_urlcheck_summary"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:textColor="?android:attr/textColorSecondary" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/app_linksheet"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?selectableItemBackground"
+      android:gravity="center_vertical"
+      android:minHeight="?attr/listPreferredItemHeight"
+      android:orientation="horizontal"
+      android:paddingStart="@dimen/keyline_1"
+      android:paddingEnd="@dimen/keyline_1">
+
+      <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_linksheet" />
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/keyline_1"
+        android:paddingEnd="@dimen/keyline_1">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:ellipsize="marquee"
+          android:singleLine="true"
+          android:text="@string/maintenance_app_linksheet_title"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:textColor="?android:attr/textColorPrimary" />
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:ellipsize="marquee"
+          android:singleLine="true"
+          android:text="@string/maintenance_app_linksheet_summary"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:textColor="?android:attr/textColorSecondary"
+          tools:text="Open-source link handler" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/app_sidestep"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?selectableItemBackground"
+      android:gravity="center_vertical"
+      android:minHeight="?attr/listPreferredItemHeight"
+      android:orientation="horizontal"
+      android:paddingStart="@dimen/keyline_1"
+      android:paddingEnd="@dimen/keyline_1">
+
+      <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_sidestep" />
+
+      <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/keyline_1"
+        android:paddingEnd="@dimen/keyline_1">
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:ellipsize="marquee"
+          android:singleLine="true"
+          android:text="@string/maintenance_app_sidestep_title"
+          android:textAppearance="?android:attr/textAppearanceMedium"
+          android:textColor="?android:attr/textColorPrimary" />
+
+        <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:ellipsize="marquee"
+          android:singleLine="true"
+          android:text="@string/maintenance_app_sidestep_summary"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:textColor="?android:attr/textColorSecondary" />
+      </LinearLayout>
+    </LinearLayout>
+
+  </LinearLayout>
+</ScrollView>

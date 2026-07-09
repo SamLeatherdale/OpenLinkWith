@@ -1,3 +1,12 @@
+This app is in life-support mode. It will continue to be updated for new Android versions, but bug fixes and new features will not be added.
+
+Recommended alternatives:
+• URLCheck — https://play.google.com/store/apps/details?id=com.trianguloy.urlchecker
+• LinkSheet — https://github.com/LinkSheet/LinkSheet
+• Sidestep — https://github.com/blankdotdev/sidestep
+
+---
+
 This app is a revived version of the original "Open Link With" app by Said Tahsin Dane, which was removed from the Play Store in 2024, due to not updating the target Android SDK to Android 13.
 
 Share the current web page from a browser to open in another app!

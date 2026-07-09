@@ -9,6 +9,16 @@
 <a href="https://apt.izzysoft.de/fdroid/index/apk/com.samleatherdale.openwith.floss" target="_blank">
 <img src="https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.samleatherdale.openwith.floss&label=IzzyOnDroid" alt="Get it onIzzyOnDroid" /></a>
 
+## Maintenance status
+
+**This app is in life-support mode.** It will continue to be updated for new Android versions, but bug fixes and new features will not be added.
+
+Recommended alternatives:
+
+- [URLCheck](https://github.com/TrianguloY/URLCheck) ([Play Store](https://play.google.com/store/apps/details?id=com.trianguloy.urlchecker))
+- [LinkSheet](https://github.com/LinkSheet/LinkSheet)
+- [Sidestep](https://github.com/blankdotdev/sidestep)
+
 ## What is Open Link With: Redux?
 
 Welcome to Open Link With: Redux!

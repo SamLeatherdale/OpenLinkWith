@@ -9,15 +9,26 @@
   <string name="activity_resolver_copy" translatable="false">Copy</string>
   <string name="which_view_application">Open with</string>
   <string name="which_view_application_named">Open with %1$s</string>
-  <string name="desc_preferred">Preferred applications to be used directly when the below links shared with this app.\n\nTap to remove a preferred app.</string>
-  <string name="desc_preferred_empty">Preferred applications to be used directly when the below links shared with this app.\n\nYou can set preferred apps by sharing links with this app and then choosing “Always”</string>
+  <string name="desc_preferred">Preferred applications to be used directly when the links below are shared with this app.\n\nTap to remove a preferred app.</string>
+  <string name="desc_preferred_empty">Preferred applications to be used directly when the links below are shared with this app.\n\nYou can set preferred apps by sharing links with this app and then choosing “Always”</string>
   <string name="title_remove_preferred">Remove preferred?</string>
   <string name="message_remove_preferred"><![CDATA[
-    Remove <strong>%1$s</strong> as the preferred app to load <strong>%2$s</strong> links with?<br><br><strong>Note:</strong> You can set a new preferred app to use next time you share <strong>%3$s</strong> link.
+    Remove <strong>%1$s</strong> as the preferred app to load <strong>%2$s</strong> links with?<br><br><strong>Note:</strong> You can set a new preferred app to use next time you share a <strong>%3$s</strong> link.
     ]]></string>
   <string name="error_invalid_url">The shared content did not have any valid URLs.</string>
   <string name="empty_resolver_activity">No other application found to handle the URL.</string>
   <string name="warning_open_link_with_name">Opening link with %s.</string>
+
+  <string name="pref_title_category_maintenance">Notice</string>
+  <string name="pref_title_maintenance">Life-support mode 🛟</string>
+  <string name="pref_summary_maintenance">This app is in life-support mode - tap for details</string>
+  <string name="maintenance_mode_message">This app is in life-support mode. It will continue to be updated for new Android versions, but bug fixes or new features will not be added.\n\nI recommend switching to one of the excellent maintained open source apps below:</string>
+  <string name="maintenance_app_urlcheck_title" translatable="false">URLCheck</string>
+  <string name="maintenance_app_urlcheck_summary">Check and open links safely</string>
+  <string name="maintenance_app_linksheet_title" translatable="false">LinkSheet</string>
+  <string name="maintenance_app_linksheet_summary">Modern open-source link handler</string>
+  <string name="maintenance_app_sidestep_title" translatable="false">Sidestep</string>
+  <string name="maintenance_app_sidestep_summary">Redirect social links to alternative frontends</string>
 
   <string name="pref_title_general">General</string>
 
@@ -27,7 +38,7 @@
   <string name="pref_summary_preferred">Change preferred app settings.</string>
 
   <string name="browser_title">Browsers</string>
-  <string name="browser_description">When a link shared with Open Link With, browsers are suggested in addition to the native apps.\n\nSelect below to modify this behavior.</string>
+  <string name="browser_description">When a link is shared with Open Link With, browsers are suggested in addition to the native apps.\n\nSelect below to modify this behavior.</string>
   <string name="browser_none">Hide browsers</string>
   <string name="browser_none_description">Never suggest browsers. Only native apps</string>
   <string name="browser_always_ask">Always ask</string>
@@ -58,10 +69,10 @@
 
   <string name="pref_title_category_advanced">Advanced</string>
   <string name="pref_title_features">App Features</string>
-  <string name="pref_summary_features">Enable or disable app features some feature</string>
+  <string name="pref_summary_features">Enable or disable app features</string>
 
   <string name="pref_details_feature_add_to_homescreen"><![CDATA[
-    Use <strong>Add to Home screen</strong> to quickly access your fav links with your fav apps.<br>
+    Use <strong>Add to Home screen</strong> to quickly access your favorite links with your favorite apps.<br>
     <br>
     When enabled, this feature adds <strong>Add to Home screen</strong> to your system <strong>Share</strong> menu.<br>
     When selected you will have an option to add the shared link into your home screen.
@@ -70,7 +81,7 @@
   <string name="pref_details_feature_text_selection"><![CDATA[
     When enabled, this feature adds <strong>Open With</strong> option into system level text selection pop-up.<br>
     <br>
-    This feature can be useful in situations where sharing link is not feasible. When link is already visible in a text field, long click to select the text with the link and click <strong>Open With</strong>.
+    This feature can be useful in situations where sharing a link is not feasible. When a link is already visible in a text field, long-click to select the text with the link and click <strong>Open With</strong>.
   ]]></string>
   <string name="pref_title_feature_direct_share">Direct Share</string>
   <string name="pref_details_feature_direct_share"><![CDATA[
@@ -89,7 +100,7 @@
      in the native app. It will also un-shorten any shortened link.<br>
     <br>
     <strong>Be careful!</strong> Since Chrome (or your favorite browser) will not be default anymore, you may notice
-     some behavior changes. As a benefit, your phone will be better with opening links in native apps.
+     some behavior changes. As a benefit, your phone will be better at opening links in native apps.
   ]]></string>
   <string name="pref_title_feature_clean_urls">Clean-up links</string>
   <string name="pref_details_feature_clean_urls"><![CDATA[
@@ -121,7 +132,7 @@
   <string name="pref_summary_open_source">See licenses of open source libraries.</string>
 
   <string name="pref_title_contact">Contact Me</string>
-  <string name="pref_summary_contact">Send me an email before giving a 1 star.</string>
+  <string name="pref_summary_contact">Send me an email before giving a 1-star rating.</string>
 
   <string name="pref_title_source" translatable="false">View the source</string>
   <string name="pref_summary_source" translatable="false">Check out the source code on GitHub</string>
@@ -132,11 +143,15 @@
   <string name="pref_title_version">Version</string>
 
   <string name="error">Error</string>
-  <string name="error_usage_access_not_found">Usage Access Settings cannot be open.\n\nYou may access it by going into Settings -> Security</string>
+  <string name="error_usage_access_not_found">Usage Access Settings cannot be opened.\n\nYou may access it by going into Settings → Security</string>
   <string name="error_cannot_start_activity">Failed to open the link with selected app. Try again later.</string>
 
   <string name="add">Add</string>
   <string name="cancel">Cancel</string>
   <string name="add_to_home_screen_dialog_hint">Shortcut title</string>
   <string name="add_to_home_screen_error">Device does not support shortcuts!</string>
+
+  <string name="keep_android_open_banner">Google will soon change how you install FOSS apps:\nhttps://keepandroidopen.org/</string>
+  <string name="keep_android_open_url" translatable="false">https://keepandroidopen.org/</string>
+  <string name="dont_show_again">Don\'t show again</string>
 </resources>

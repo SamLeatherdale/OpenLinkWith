@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.preference.PreferenceManager;
 import androidx.core.content.ContextCompat;
 import com.tasomaniac.openwith.data.prefs.BooleanPreference;
+import com.tasomaniac.openwith.data.prefs.MaintenanceModeHidden;
 import com.tasomaniac.openwith.data.prefs.TutorialShown;
 import com.tasomaniac.openwith.data.prefs.UsageAccess;
 import com.tasomaniac.openwith.resolver.IconLoader;
@@ -75,6 +76,13 @@ abstract class AppModule {
     @UsageAccess
     static BooleanPreference provideUsageAccess(SharedPreferences prefs) {
         return new BooleanPreference(prefs, "usage_access");
+    }
+
+    @Provides
+    @Singleton
+    @MaintenanceModeHidden
+    static BooleanPreference provideMaintenanceModeHidden(SharedPreferences prefs) {
+        return new BooleanPreference(prefs, "pref_maintenance_mode_hidden");
     }
 
     @Provides

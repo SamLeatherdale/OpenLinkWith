@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <PreferenceCategory
+    android:order="5"
+    android:key="@string/pref_key_category_maintenance"
+    android:title="@string/pref_title_category_maintenance">
+
+    <Preference
+      android:key="@string/pref_key_maintenance"
+      android:title="@string/pref_title_maintenance"
+      android:summary="@string/pref_summary_maintenance" />
+
+  </PreferenceCategory>
+
+</PreferenceScreen>
